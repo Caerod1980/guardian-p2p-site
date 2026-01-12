@@ -4,6 +4,26 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Guardian P2P - Protegendo Vidas com Tecnologia</title>
+  
+  <!-- SEO Meta Tags -->
+  <meta name="description" content="Guardian P2P é um aplicativo de segurança pessoal que envia alertas de emergência com localização GPS para seus contatos de confiança. Proteção instantânea para você e sua família." />
+  <meta name="keywords" content="segurança pessoal, alerta de emergência, GPS, proteção, app segurança, Guardian P2P, botão de pânico, SOS" />
+  <meta name="author" content="Rodrigo Caetano" />
+  <meta name="robots" content="index, follow" />
+  
+  <!-- Open Graph / Facebook -->
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://caerod1980.github.io/Guardian-P2P/" />
+  <meta property="og:title" content="Guardian P2P - Protegendo Vidas com Tecnologia" />
+  <meta property="og:description" content="Aplicativo de segurança pessoal com alertas de emergência e localização GPS. Proteja você e sua família com apenas um toque." />
+  <meta property="og:image" content="https://raw.githubusercontent.com/Caerod1980/Imagens-Site-Guardian/2d518251863d8bc9c6397c5f064fd7b2ca48d683/assets/adaptive-icon.png" />
+  
+  <!-- Twitter -->
+  <meta property="twitter:card" content="summary_large_image" />
+  <meta property="twitter:url" content="https://caerod1980.github.io/Guardian-P2P/" />
+  <meta property="twitter:title" content="Guardian P2P - Protegendo Vidas com Tecnologia" />
+  <meta property="twitter:description" content="Aplicativo de segurança pessoal com alertas de emergência e localização GPS. Proteja você e sua família com apenas um toque." />
+  <meta property="twitter:image" content="https://raw.githubusercontent.com/Caerod1980/Imagens-Site-Guardian/2d518251863d8bc9c6397c5f064fd7b2ca48d683/assets/adaptive-icon.png" />
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
   <script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"></script>
@@ -790,6 +810,66 @@
       resize: vertical;
     }
 
+    /* FAQ Styles */
+    .faq-container {
+      max-width: 800px;
+      margin: 0 auto;
+    }
+
+    .faq-item {
+      background: var(--white);
+      border-radius: var(--radius);
+      margin-bottom: 1rem;
+      box-shadow: var(--shadow);
+      overflow: hidden;
+    }
+
+    .faq-question {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 1.25rem 1.5rem;
+      cursor: pointer;
+      transition: var(--transition);
+    }
+
+    .faq-question:hover {
+      background: var(--light-gray);
+    }
+
+    .faq-question h4 {
+      margin: 0;
+      font-size: 1rem;
+      font-weight: 600;
+      color: var(--dark);
+    }
+
+    .faq-question i {
+      color: var(--primary);
+      transition: transform 0.3s ease;
+    }
+
+    .faq-item.active .faq-question i {
+      transform: rotate(180deg);
+    }
+
+    .faq-answer {
+      max-height: 0;
+      overflow: hidden;
+      transition: max-height 0.3s ease;
+    }
+
+    .faq-item.active .faq-answer {
+      max-height: 200px;
+    }
+
+    .faq-answer p {
+      padding: 0 1.5rem 1.25rem;
+      margin: 0;
+      color: var(--gray);
+      line-height: 1.6;
+    }
+
     .contact-info {
       display: grid;
       grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
@@ -1170,6 +1250,7 @@
         <a href="#historia">Nossa História</a>
         <a href="#funcionalidades">Funcionalidades</a>
         <a href="#privacidade">Privacidade</a>
+        <a href="#faq">FAQ</a>
         <a href="#contato">Contato</a>
         <a href="#download" class="btn btn-primary">Baixar App</a>
       </nav>
@@ -1382,6 +1463,75 @@
     </div>
   </section>
 
+  <section id="faq" class="section">
+    <div class="section-header">
+      <h3 class="section-title">Perguntas Frequentes</h3>
+      <p class="section-subtitle">Tire suas dúvidas sobre o Guardian P<span class="p2p-ligadura">2</span>P</p>
+    </div>
+    
+    <div class="faq-container">
+      <div class="faq-item">
+        <div class="faq-question">
+          <h4>O Guardian P2P é gratuito?</h4>
+          <i class="fas fa-chevron-down"></i>
+        </div>
+        <div class="faq-answer">
+          <p>Sim! O Guardian P2P é totalmente gratuito para download e uso. Não há taxas ocultas ou assinaturas.</p>
+        </div>
+      </div>
+      
+      <div class="faq-item">
+        <div class="faq-question">
+          <h4>Como funciona o alerta de emergência?</h4>
+          <i class="fas fa-chevron-down"></i>
+        </div>
+        <div class="faq-answer">
+          <p>Ao pressionar o botão de emergência por 3 segundos, o app envia automaticamente sua localização GPS em tempo real para todos os seus contatos de confiança cadastrados.</p>
+        </div>
+      </div>
+      
+      <div class="faq-item">
+        <div class="faq-question">
+          <h4>Meus dados ficam seguros?</h4>
+          <i class="fas fa-chevron-down"></i>
+        </div>
+        <div class="faq-answer">
+          <p>Sim! Utilizamos criptografia de ponta a ponta e arquitetura P2P (peer-to-peer), o que significa que seus dados são enviados diretamente entre dispositivos, sem passar por servidores centrais.</p>
+        </div>
+      </div>
+      
+      <div class="faq-item">
+        <div class="faq-question">
+          <h4>Preciso de internet para enviar alertas?</h4>
+          <i class="fas fa-chevron-down"></i>
+        </div>
+        <div class="faq-answer">
+          <p>Sim, é necessário conexão com internet (Wi-Fi ou dados móveis) para enviar os alertas e a localização GPS para seus contatos.</p>
+        </div>
+      </div>
+      
+      <div class="faq-item">
+        <div class="faq-question">
+          <h4>Como adiciono um contato de confiança?</h4>
+          <i class="fas fa-chevron-down"></i>
+        </div>
+        <div class="faq-answer">
+          <p>Ambos os usuários precisam ter o Guardian P2P instalado. Você envia um convite pelo app e, após a pessoa aceitar, a conexão é estabelecida. Isso garante que apenas pessoas autorizadas recebam seus alertas.</p>
+        </div>
+      </div>
+      
+      <div class="faq-item">
+        <div class="faq-question">
+          <h4>O app funciona com a tela bloqueada?</h4>
+          <i class="fas fa-chevron-down"></i>
+        </div>
+        <div class="faq-answer">
+          <p>Sim! O Guardian P2P funciona em segundo plano e pode enviar alertas mesmo com o app minimizado, a tela bloqueada ou o app fechado.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
   <section id="contato" class="section">
     <div class="section-header">
       <h3 class="section-title">Entre em Contato</h3>
@@ -1471,6 +1621,7 @@
         <a href="#historia">Nossa História</a>
         <a href="#funcionalidades">Funcionalidades</a>
         <a href="#privacidade">Privacidade</a>
+        <a href="#faq">FAQ</a>
         <a href="#contato">Contato</a>
         <a href="#download">Download</a>
       </div>
@@ -1584,6 +1735,14 @@
           
           console.log('Erro EmailJS:', error);
         });
+    });
+
+    // FAQ Toggle
+    document.querySelectorAll('.faq-question').forEach(question => {
+      question.addEventListener('click', () => {
+        const faqItem = question.parentElement;
+        faqItem.classList.toggle('active');
+      });
     });
   </script>
 </body>
