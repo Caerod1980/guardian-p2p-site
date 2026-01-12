@@ -116,6 +116,84 @@
       color: var(--primary);
     }
 
+    /* Ligadura P2P - smile embaixo do 2 */
+    .p2p-ligadura {
+      position: relative;
+      display: inline-block;
+    }
+
+    .p2p-ligadura::after {
+      content: '';
+      position: absolute;
+      bottom: 0px;
+      left: 50%;
+      transform: translateX(-50%);
+      width: 0.9em;
+      height: 0.35em;
+      border: 3px solid currentColor;
+      border-top: none;
+      border-radius: 0 0 100% 100%;
+    }
+
+    /* Logo header e footer - cor vermelha */
+    .logo-text .p2p-ligadura::after,
+    .footer-logo-text .p2p-ligadura::after {
+      border-color: var(--primary);
+    }
+
+    /* Títulos de seção - cor azul escuro */
+    .section-title .p2p-ligadura::after {
+      border-color: var(--secondary);
+      border-width: 3px;
+    }
+
+    /* Texto em parágrafos - cor cinza, mais fino */
+    p .p2p-ligadura::after {
+      border-color: var(--gray);
+      border-width: 2px;
+      width: 0.8em;
+      height: 0.3em;
+    }
+
+    /* Texto branco (hero, cta) */
+    .hero p .p2p-ligadura::after,
+    .cta p .p2p-ligadura::after {
+      border-color: rgba(255, 255, 255, 0.85);
+      border-width: 2px;
+    }
+
+    /* Subtítulos de seção */
+    .section-subtitle .p2p-ligadura::after {
+      border-color: var(--gray);
+      border-width: 2px;
+    }
+
+    /* Cards - h4 */
+    .card h4 .p2p-ligadura::after {
+      border-color: var(--secondary);
+      border-width: 2.5px;
+    }
+
+    /* Mission statement - itálico, azul */
+    .mission-statement .p2p-ligadura::after {
+      border-color: var(--secondary);
+      border-width: 2.5px;
+    }
+
+    /* Footer bottom - texto claro */
+    .footer-bottom .p2p-ligadura::after {
+      border-color: rgba(255, 255, 255, 0.5);
+      border-width: 2px;
+      width: 0.8em;
+      height: 0.28em;
+    }
+
+    /* Footer paragraph */
+    .footer-col p .p2p-ligadura::after {
+      border-color: rgba(255, 255, 255, 0.7);
+      border-width: 2px;
+    }
+
     nav {
       display: flex;
       gap: 2rem;
@@ -403,7 +481,7 @@
     }
 
     .our-story {
-      background: linear-gradient(135deg, var(--light) 0%, var(--accent) 100%);
+      background: linear-gradient(135deg, var(--secondary) 0%, #1a3a5c 100%);
       position: relative;
       overflow: hidden;
     }
@@ -434,6 +512,18 @@
       transform: translate(-30%, 30%);
     }
 
+    .our-story .section-title {
+      color: var(--white);
+    }
+
+    .our-story .section-subtitle {
+      color: var(--white);
+    }
+
+    .our-story .section-subtitle .p2p-ligadura::after {
+      border-color: var(--white);
+    }
+
     .story-content {
       max-width: 1000px;
       margin: 0 auto;
@@ -446,6 +536,15 @@
       line-height: 1.8;
       margin-bottom: 2rem;
       text-align: justify;
+      color: #ffffff;
+    }
+
+    .story-text p {
+      color: #ffffff !important;
+    }
+
+    .story-text .p2p-ligadura::after {
+      border-color: #ffffff !important;
     }
 
     .story-highlight {
@@ -498,8 +597,16 @@
       color: var(--secondary);
       margin-top: 3rem;
       padding: 2rem;
-      border-top: 2px solid var(--accent);
-      border-bottom: 2px solid var(--accent);
+    }
+
+    .our-story .mission-statement {
+      color: #ffffff !important;
+      border-top: none;
+      border-bottom: none;
+    }
+
+    .our-story .mission-statement .p2p-ligadura::after {
+      border-color: #ffffff !important;
     }
 
     .features-highlight {
@@ -710,6 +817,20 @@
       color: var(--white);
       font-size: 1.2rem;
       flex-shrink: 0;
+      transition: transform 0.3s ease, background 0.3s ease;
+    }
+
+    .contact-icon:hover {
+      transform: scale(1.1);
+    }
+
+    .whatsapp-icon {
+      background: #25D366;
+      cursor: pointer;
+    }
+
+    .whatsapp-icon:hover {
+      background: #128C7E;
     }
 
     .form-feedback {
@@ -766,6 +887,54 @@
 
     .footer-col a:hover {
       color: var(--white);
+    }
+
+    /* Estilos para seção de Apoiadores */
+    .apoiadores-col {
+      text-align: center;
+    }
+
+    .apoiadores-texto {
+      font-size: 0.95rem;
+      color: rgba(255, 255, 255, 0.9) !important;
+      margin-bottom: 0.5rem !important;
+    }
+
+    .apoiadores-subtexto {
+      font-size: 0.85rem;
+      color: rgba(255, 255, 255, 0.7) !important;
+      margin-bottom: 1rem !important;
+    }
+
+    .apoiadores-logos {
+      display: flex;
+      justify-content: center;
+      gap: 1rem;
+      margin-bottom: 1rem;
+    }
+
+    .apoiador-logo {
+      width: 100px;
+      height: 100px;
+      object-fit: contain;
+      border-radius: 12px;
+      background: white;
+      padding: 8px;
+      transition: transform 0.3s ease;
+    }
+
+    .apoiador-logo:hover {
+      transform: scale(1.05);
+    }
+
+    .apoiadores-cta {
+      font-size: 0.85rem;
+      color: rgba(255, 255, 255, 0.8) !important;
+    }
+
+    .apoiadores-cta a {
+      color: var(--accent) !important;
+      display: inline !important;
     }
 
     .footer-logo {
@@ -955,7 +1124,7 @@
     <div class="header-container">
       <a href="#home" class="logo">
         <img src="https://raw.githubusercontent.com/Caerod1980/Imagens-Site-Guardian/2d518251863d8bc9c6397c5f064fd7b2ca48d683/assets/adaptive-icon.png" alt="Guardian P2P" class="logo-img">
-        <div class="logo-text">Guardian <span>P2P</span></div>
+        <div class="logo-text">Guardian <span>P<span class="p2p-ligadura">2</span>P</span></div>
       </a>
       
       <button class="mobile-menu-btn" id="mobileMenuBtn">
@@ -999,7 +1168,7 @@
 
   <section id="sobre" class="section about">
     <div class="section-header">
-      <h3 class="section-title">Sobre o Guardian P2P</h3>
+      <h3 class="section-title">Sobre o Guardian P<span class="p2p-ligadura">2</span>P</h3>
       <p class="section-subtitle">Tecnologia avançada para sua segurança pessoal</p>
     </div>
     <div class="cards">
@@ -1023,14 +1192,14 @@
   <section id="historia" class="section our-story">
     <div class="section-header">
       <h3 class="section-title">Nossa História</h3>
-      <p class="section-subtitle">A inspiração por trás do Guardian P2P</p>
+      <p class="section-subtitle">A inspiração por trás do Guardian P<span class="p2p-ligadura">2</span>P</p>
     </div>
     
     <div class="story-content">
       <div class="story-text">
         <p>Assistindo à série brasileira "Dias Perfeitos", Rodrigo Caetano teve uma inspiração poderosa: desenvolver uma tecnologia acessível que pudesse proteger pessoas em situações de perigo real.</p>
         
-        <p>Assim nasceu o Guardian P2P, um aplicativo criado para oferecer segurança pessoal instantânea, permitindo que qualquer pessoa — especialmente mulheres e crianças — envie alertas de emergência com apenas um toque.</p>
+        <p>Assim nasceu o Guardian P<span class="p2p-ligadura">2</span>P, um aplicativo criado para oferecer segurança pessoal instantânea, permitindo que qualquer pessoa — especialmente mulheres e crianças — envie alertas de emergência com apenas um toque.</p>
         
         <p>O objetivo é simples e vital: dar às pessoas a chance de pedir socorro a tempo.</p>
       </div>
@@ -1063,11 +1232,11 @@
       <div class="story-text">
         <p>Esses números revelam um cenário alarmante — e reforçam a importância de unir tecnologia e empatia para salvar vidas.</p>
         
-        <p>O Guardian P2P nasceu com essa missão: dar voz a quem precisa de ajuda e tempo a quem pode agir.</p>
+        <p>O Guardian P<span class="p2p-ligadura">2</span>P nasceu com essa missão: dar voz a quem precisa de ajuda e tempo a quem pode agir.</p>
       </div>
       
       <div class="mission-statement">
-        <strong>Guardian P2P — "Salvando vidas com tecnologia."</strong>
+        <strong>Guardian P<span class="p2p-ligadura">2</span>P — "Salvando vidas com tecnologia."</strong>
       </div>
     </div>
   </section>
@@ -1196,12 +1365,12 @@
         </div>
       </div>
       <div class="contact-item">
-        <div class="contact-icon">
+        <a href="https://wa.me/5514996593929" target="_blank" class="contact-icon whatsapp-icon">
           <i class="fab fa-whatsapp"></i>
-        </div>
+        </a>
         <div>
           <h5>WhatsApp</h5>
-          <a href="https://wa.me/5514996593929">(14) 99659-3929</a>
+          <a href="https://wa.me/5514996593929" target="_blank">(14) 99659-3929</a>
         </div>
       </div>
     </div>
@@ -1232,7 +1401,7 @@
   <section id="download" class="cta">
     <div class="cta-container">
       <h3>Baixe o App Agora</h3>
-      <p>Proteja-se e proteja quem importa com o Guardian P2P. Disponível para iOS e Android.</p>
+      <p>Proteja-se e proteja quem importa com o Guardian P<span class="p2p-ligadura">2</span>P. Disponível para iOS e Android.</p>
       <div class="store-buttons">
         <a href="https://play.google.com/store/apps/details?id=com.guardianp2p" target="_blank" class="store-btn">
           <i class="fab fa-google-play store-icon"></i>
@@ -1257,7 +1426,7 @@
       <div class="footer-col">
         <div class="footer-logo">
           <img src="https://raw.githubusercontent.com/Caerod1980/Imagens-Site-Guardian/2d518251863d8bc9c6397c5f064fd7b2ca48d683/assets/adaptive-icon.png" alt="Guardian P2P" class="footer-logo-img">
-          <div class="footer-logo-text">Guardian <span>P2P</span></div>
+          <div class="footer-logo-text">Guardian <span>P<span class="p2p-ligadura">2</span>P</span></div>
         </div>
         <p>Proteção instantânea quando você mais precisa. Tecnologia P2P para sua segurança.</p>
       </div>
@@ -1286,6 +1455,20 @@
         <a href="tel:192">192 - SAMU</a>
         <a href="tel:193">193 - Bombeiros</a>
         <a href="tel:199">199 - Defesa Civil</a>
+        <a href="tel:180">180 - Central de Atendimento à Mulher</a>
+        <a href="tel:100">100 - Direitos Humanos</a>
+      </div>
+      
+      <div class="footer-col apoiadores-col">
+        <h5>💙 Apoiadores</h5>
+        <p class="apoiadores-texto">Seja um apoiador dessa iniciativa que visa a segurança de todos!</p>
+        <p class="apoiadores-subtexto">E nos ajude a melhorar cada vez mais!</p>
+        <div class="apoiadores-logos">
+          <a href="https://www.instagram.com/bebcombauru?igsh=MWNyam9sODliMXEzdg==" target="_blank" title="Bebidas & Cia - Instagram">
+            <img src="https://raw.githubusercontent.com/Caerod1980/Imagens-Site-Guardian/556418f97b4c7ab885800c068ffb93057005e676/logo%20loja.jpeg" alt="Bebidas & Cia" class="apoiador-logo">
+          </a>
+        </div>
+        <p class="apoiadores-cta">🤝 Quer ser um apoiador? <a href="#contato">Entre em contato!</a></p>
       </div>
     </div>
     
