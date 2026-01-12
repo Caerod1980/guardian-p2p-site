@@ -1686,6 +1686,13 @@
       mainNav.classList.toggle('active');
     });
     
+    // Fechar menu ao clicar em qualquer item
+    mainNav.querySelectorAll('a').forEach(link => {
+      link.addEventListener('click', () => {
+        mainNav.classList.remove('active');
+      });
+    });
+    
     function checkVisibility() {
       document.querySelectorAll(".section").forEach(section => {
         const top = section.getBoundingClientRect().top;
