@@ -799,6 +799,222 @@
       }
     }
 
+    /* Estilos da Seção SMS Helper */
+    .sms-helper-section {
+      background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);
+    }
+
+    .sms-helper-container {
+      max-width: 1100px;
+      margin: 0 auto;
+      display: flex;
+      flex-direction: column;
+      gap: 2rem;
+    }
+
+    .sms-helper-main {
+      background: var(--white);
+      border-radius: var(--radius);
+      padding: 2.5rem;
+      text-align: center;
+      box-shadow: var(--shadow-lg);
+      border-left: 5px solid var(--primary);
+    }
+
+    .sms-helper-icon {
+      position: relative;
+      display: inline-block;
+      width: 80px;
+      height: 80px;
+      background: linear-gradient(135deg, var(--primary) 0%, var(--primary-dark) 100%);
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin-bottom: 1.5rem;
+    }
+
+    .sms-helper-icon i {
+      font-size: 2.5rem;
+      color: var(--white);
+    }
+
+    .sms-badge {
+      position: absolute;
+      bottom: -5px;
+      right: -10px;
+      background: var(--secondary);
+      color: var(--white);
+      font-size: 0.7rem;
+      font-weight: bold;
+      padding: 0.2rem 0.5rem;
+      border-radius: 10px;
+    }
+
+    .sms-helper-main h4 {
+      color: var(--secondary);
+      margin-bottom: 1rem;
+      font-size: 1.5rem;
+    }
+
+    .sms-helper-description {
+      color: var(--gray);
+      max-width: 600px;
+      margin: 0 auto 1.5rem;
+      line-height: 1.7;
+    }
+
+    .sms-helper-flow {
+      background: var(--white);
+      border-radius: var(--radius);
+      padding: 2rem;
+      box-shadow: var(--shadow);
+    }
+
+    .sms-helper-flow h5 {
+      text-align: center;
+      color: var(--secondary);
+      margin-bottom: 1.5rem;
+      font-size: 1.2rem;
+    }
+
+    .sms-helper-flow h5 i {
+      margin-right: 0.5rem;
+      color: var(--primary);
+    }
+
+    .flow-steps {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 1rem;
+      flex-wrap: wrap;
+    }
+
+    .flow-step {
+      flex: 1;
+      min-width: 180px;
+      max-width: 250px;
+      text-align: center;
+      padding: 1rem;
+    }
+
+    .step-number {
+      width: 40px;
+      height: 40px;
+      background: var(--primary);
+      color: var(--white);
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-weight: bold;
+      font-size: 1.2rem;
+      margin: 0 auto 0.8rem;
+    }
+
+    .flow-step p {
+      font-size: 0.9rem;
+      color: var(--dark);
+      margin: 0;
+    }
+
+    .flow-arrow {
+      color: var(--primary);
+      font-size: 1.2rem;
+    }
+
+    @media (max-width: 768px) {
+      .flow-arrow {
+        transform: rotate(90deg);
+      }
+    }
+
+  .sms-helper-features {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 1.5rem;
+}
+
+.sms-feature-card {
+  background: var(--white);
+  border-radius: var(--radius);
+  padding: 1.5rem;
+  box-shadow: var(--shadow);
+}
+
+/* Título */
+.sms-feature-card h5 {
+  color: var(--secondary);
+  margin-bottom: 1.2rem;
+  font-size: 1.1rem;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+/* Lista */
+.sms-feature-card ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+/* Item */
+.sms-feature-card li {
+  position: relative;
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  padding: 0.75rem 1rem;
+  font-size: 0.95rem;
+  color: var(--dark);
+  border: none;
+  background: #ffffff;
+  border-radius: 999px; /* estilo pill */
+}
+
+/* 🔴 REMOVE QUALQUER MARCADOR/PONTO EXTRA */
+.sms-feature-card li::before,
+.sms-feature-card li::after {
+  content: none !important;
+  display: none !important;
+}
+
+/* Ícone */
+.sms-feature-card li i {
+  color: #e53935;
+  font-size: 1rem;
+  width: 20px;
+  flex-shrink: 0;
+}
+
+   .sms-helper-alert {
+  background: linear-gradient(135deg, var(--primary) 0%, var(--primary-dark) 100%);
+  color: #ffffff;            /* FORÇA branco sólido */
+  border-radius: var(--radius);
+  padding: 1.5rem 2rem;
+  display: flex;
+  align-items: flex-start;
+  gap: 1rem;
+  opacity: 1;                /* garante 100% visível */
+}
+
+.sms-helper-alert i {
+  font-size: 1.5rem;
+  margin-top: 0.2rem;
+  color: #ffffff;            /* ícone branco sólido */
+  opacity: 1;
+}
+
+.sms-helper-alert p,
+.sms-helper-alert strong {
+  margin: 0;
+  line-height: 1.6;
+  color: #ffffff;            /* texto branco sólido */
+  opacity: 1;
+}
+
     .privacy {
       background: var(--light-gray);
     }
@@ -1391,6 +1607,7 @@
         <a href="#historia">Nossa História</a>
         <a href="#funcionalidades">Funcionalidades</a>
         <a href="#video-demo"><i class="fas fa-play-circle"></i> Vídeo Demo</a>
+            <a href="#sms-helper"><i class="fas fa-sms"></i> SMS Helper</a>
         <a href="#privacidade">Privacidade</a>
         <a href="#faq">FAQ</a>
         <a href="#contato">Contato</a>
@@ -1479,25 +1696,25 @@
       
       <div class="story-highlight">
         <h4>📊 A Realidade que Nos Motiva</h4>
-        <p>A motivação de Rodrigo surgiu da realidade que o Brasil enfrenta todos os dias. De acordo com o Fórum Brasileiro de Segurança Pública (2024):</p>
+        <p>A motivação de Rodrigo surgiu da realidade que o Brasil enfrenta todos os dias. De acordo com o Fórum Brasileiro de Segurança Pública (2025):</p>
       </div>
       
       <div class="stats-grid">
         <div class="stat-item">
-          <div class="stat-number">74.000+</div>
-          <div class="stat-label">Mulheres estupradas em 2023</div>
-          <p style="font-size: 0.9rem; margin-top: 0.5rem; color: var(--gray);">Média de 8 por hora</p>
+          <div class="stat-number">87.545+</div>
+          <div class="stat-label">Mulheres estupradas em 2024</div>
+          <p style="font-size: 0.9rem; margin-top: 0.5rem; color: var(--gray);">Média de 10 por hora</p>
         </div>
         
         <div class="stat-item">
-          <div class="stat-number">1.463</div>
-          <div class="stat-label">Feminicídios registrados</div>
+          <div class="stat-number">1.492</div>
+          <div class="stat-label">Feminicídios registrados em 2024</div>
           <p style="font-size: 0.9rem; margin-top: 0.5rem; color: var(--gray);">Maior número já documentado</p>
         </div>
         
         <div class="stat-item">
-          <div class="stat-number">40.000+</div>
-          <div class="stat-label">Desaparecimentos anuais</div>
+          <div class="stat-number">81.873+</div>
+          <div class="stat-label">Desaparecimentos anuais em 2024</div>
           <p style="font-size: 0.9rem; margin-top: 0.5rem; color: var(--gray);">Principalmente crianças e adolescentes</p>
         </div>
       </div>
@@ -1606,11 +1823,91 @@
         <h4>Aprenda a usar o Guardian P<span class="p2p-ligadura">2</span>P</h4>
         <p>Neste vídeo, mostramos como configurar e utilizar todas as funcionalidades do aplicativo para garantir sua segurança e de seus entes queridos.</p>
         <ul class="video-features">
-          <li><i class="fas fa-check-circle"></i> Como configurar o botão de emergência</li>
-          <li><i class="fas fa-check-circle"></i> Adicionar contatos de confiança</li>
-          <li><i class="fas fa-check-circle"></i> Enviar alertas com localização</li>
-          <li><i class="fas fa-check-circle"></i> Modo Alerta com comando de voz</li>
+          <li>Como configurar o botão de emergência</li>
+          <li>Adicionar contatos de confiança</li>
+          <li>Enviar alertas com localização</li>
+          <li>Modo Alerta com comando de voz</li>
+          <li>Helper para sem internet</li>
         </ul>
+      </div>
+    </div>
+  </section>
+
+  <!-- Seção Guardian SMS Helper -->
+  <section id="sms-helper" class="section sms-helper-section">
+    <div class="section-header">
+      <h3 class="section-title"><i class="fas fa-sms" style="color: var(--primary);"></i> Guardian SMS Helper</h3>
+      <p class="section-subtitle">Complemento de segurança para situações sem internet</p>
+    </div>
+    
+    <div class="sms-helper-container">
+      <!-- Card Principal -->
+      <div class="sms-helper-main">
+        <div class="sms-helper-icon">
+          <i class="fas fa-mobile-alt"></i>
+          <span class="sms-badge">SMS</span>
+        </div>
+        <h4>Proteção mesmo sem internet</h4>
+        <p class="sms-helper-description">
+          O Guardian SMS Helper é um aplicativo complementar que envia SMS de emergência automaticamente 
+          para seus contatos de confiança quando você está em perigo e <strong>não possui conexão com a internet</strong>. Baixe o Guardian P2P e acesse o botão Baixar SMS Helper ou pesquise no Play Store.
+        </p>
+        <a href="https://caerod1980.github.io/Privacidade-Helper/" target="_blank" class="btn btn-primary"> Política de Privacidade
+        </a>
+      </div>
+
+     <!-- Como Funciona -->
+<div class="sms-helper-flow">
+  <h5><i class="fas fa-route"></i> Como Funciona</h5>
+
+  <div class="flow-steps">
+    <div class="flow-step">
+      <div class="step-number">1</div>
+      <p>Configure seus contatos de emergência no Guardian P2P</p>
+    </div>
+
+    <div class="flow-step">
+      <div class="step-number">2</div>
+      <p>Em uma emergência, acione o alerta no Guardian P2P</p>
+    </div>
+
+    <div class="flow-step">
+      <div class="step-number">3</div>
+      <p>Sem internet? O SMS Helper envia SMS com sua localização</p>
+    </div>
+  </div>
+</div>
+
+      <!-- Recursos e Privacidade -->
+      <div class="sms-helper-features">
+        <div class="sms-feature-card">
+          <h5><i class="fas fa-star" style="color: #FFD700;"></i> Recursos</h5>
+          <ul>
+            <li>Envia automáticamente SMS de socorro funcionando apenas com sinal de celular. Possui integração completa com Guardian P2P com uma interface intuitiva em português que perimiti a configuração de otimização de bateria.</li>
+          </ul>
+        </div>
+        <div class="sms-feature-card">
+          <h5><i class="fas fa-shield-alt" style="color: var(--primary);"></i> Privacidade</h5>
+          <ul>
+            <li>Não lê suas mensagens, não coleta dados pessoais, não acessa histórico de SMS e só envia SMS quando você aciona o alerta.</li>
+          </ul>
+        </div>
+        <div class="sms-feature-card">
+          <h5><i class="fas fa-cog" style="color: #6c757d;"></i> Requisitos</h5>
+          <ul>
+            <li><i class="fab fa-android"></i> Android 8.0 ou superior</li>
+            <li><i class="fas fa-mobile-alt"></i> Guardian P2P instalado</li>
+            <li><i class="fas fa-comment-sms"></i> Google Mensagens como padrão</li>
+          </ul>
+        </div>
+      </div>
+
+      <!-- Alerta Importante -->
+      <div class="sms-helper-alert">
+        <i class="fas fa-info-circle"></i>
+        <p><strong>Por que SMS?</strong> O SMS tradicional é o único método de comunicação que funciona sem internet. 
+        Em emergências reais, a vítima pode estar em áreas sem cobertura de dados ou ter o plano bloqueado. 
+        O SMS funciona apenas com sinal de celular básico.</p>
       </div>
     </div>
   </section>
@@ -1845,7 +2142,7 @@
     </div>
     
     <div class="footer-bottom">
-      <p>Guardian P2P v2.1.8 • Última atualização: 17/10/2025</p>
+      <p>Guardian P2P v2.2.0 • Última atualização: 20/01/2026</p>
       <p>© 2025 Guardian P2P. Todos os direitos reservados.</p>
     </div>
   </footer>
