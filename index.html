@@ -405,14 +405,7 @@
     .phone-slide img {
       width: 100%;
       height: 100%;
-      object-fit: contain;
-      background: #f5f5f5;
-    }
-
-    /* Primeiro slide (app) usa cover, depoimentos usam contain */
-    .phone-slide:first-child img {
       object-fit: cover;
-      background: transparent;
     }
 
     .carousel-dots {
@@ -727,7 +720,17 @@
       font-size: 0.9rem;
     }
 
-    /* Estilos da Seção de Vídeo */
+    /* ====== SEÇÃO COMANDO DE VOZ ====== */
+    .comando-voz-section {
+      background: linear-gradient(135deg, #f1faee 0%, #e8f4f8 100%);
+    }
+
+    /* ====== SEÇÃO DEPOIMENTOS ====== */
+    .depoimentos-section {
+      background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);
+    }
+
+    /* ====== SEÇÃO VÍDEO DEMO ====== */
     .video-demo-section {
       background: linear-gradient(135deg, var(--light) 0%, var(--white) 100%);
     }
@@ -792,14 +795,7 @@
       color: var(--primary);
     }
 
-    @media (max-width: 768px) {
-      .video-features {
-        flex-direction: column;
-        align-items: center;
-      }
-    }
-
-    /* Estilos da Seção SMS Helper */
+    /* ====== SEÇÃO SMS HELPER ====== */
     .sms-helper-section {
       background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);
     }
@@ -924,96 +920,90 @@
       font-size: 1.2rem;
     }
 
-    @media (max-width: 768px) {
-      .flow-arrow {
-        transform: rotate(90deg);
-      }
+    .sms-helper-features {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 1.5rem;
     }
 
-  .sms-helper-features {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-  gap: 1.5rem;
-}
+    .sms-feature-card {
+      background: var(--white);
+      border-radius: var(--radius);
+      padding: 1.5rem;
+      box-shadow: var(--shadow);
+    }
 
-.sms-feature-card {
-  background: var(--white);
-  border-radius: var(--radius);
-  padding: 1.5rem;
-  box-shadow: var(--shadow);
-}
+    /* Título */
+    .sms-feature-card h5 {
+      color: var(--secondary);
+      margin-bottom: 1.2rem;
+      font-size: 1.1rem;
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+    }
 
-/* Título */
-.sms-feature-card h5 {
-  color: var(--secondary);
-  margin-bottom: 1.2rem;
-  font-size: 1.1rem;
-  display: flex;
-  align-items: center;
-  gap: 0.5rem;
-}
+    /* Lista */
+    .sms-feature-card ul {
+      list-style: none;
+      padding: 0;
+      margin: 0;
+    }
 
-/* Lista */
-.sms-feature-card ul {
-  list-style: none;
-  padding: 0;
-  margin: 0;
-}
+    /* Item */
+    .sms-feature-card li {
+      position: relative;
+      display: flex;
+      align-items: center;
+      gap: 0.75rem;
+      padding: 0.75rem 1rem;
+      font-size: 0.95rem;
+      color: var(--dark);
+      border: none;
+      background: #ffffff;
+      border-radius: 999px;
+    }
 
-/* Item */
-.sms-feature-card li {
-  position: relative;
-  display: flex;
-  align-items: center;
-  gap: 0.75rem;
-  padding: 0.75rem 1rem;
-  font-size: 0.95rem;
-  color: var(--dark);
-  border: none;
-  background: #ffffff;
-  border-radius: 999px; /* estilo pill */
-}
+    /* REMOVE QUALQUER MARCADOR/PONTO EXTRA */
+    .sms-feature-card li::before,
+    .sms-feature-card li::after {
+      content: none !important;
+      display: none !important;
+    }
 
-/* 🔴 REMOVE QUALQUER MARCADOR/PONTO EXTRA */
-.sms-feature-card li::before,
-.sms-feature-card li::after {
-  content: none !important;
-  display: none !important;
-}
+    /* Ícone */
+    .sms-feature-card li i {
+      color: #e53935;
+      font-size: 1rem;
+      width: 20px;
+      flex-shrink: 0;
+    }
 
-/* Ícone */
-.sms-feature-card li i {
-  color: #e53935;
-  font-size: 1rem;
-  width: 20px;
-  flex-shrink: 0;
-}
+    .sms-helper-alert {
+      background: linear-gradient(135deg, var(--primary) 0%, var(--primary-dark) 100%);
+      color: #ffffff;
+      border-radius: var(--radius);
+      padding: 1.5rem 2rem;
+      display: flex;
+      align-items: flex-start;
+      gap: 1rem;
+      opacity: 1;
+    }
 
-   .sms-helper-alert {
-  background: linear-gradient(135deg, var(--primary) 0%, var(--primary-dark) 100%);
-  color: #ffffff;            /* FORÇA branco sólido */
-  border-radius: var(--radius);
-  padding: 1.5rem 2rem;
-  display: flex;
-  align-items: flex-start;
-  gap: 1rem;
-  opacity: 1;                /* garante 100% visível */
-}
+    .sms-helper-alert i {
+      font-size: 1.5rem;
+      margin-top: 0.2rem;
+      color: #ffffff;
+      opacity: 1;
+    }
 
-.sms-helper-alert i {
-  font-size: 1.5rem;
-  margin-top: 0.2rem;
-  color: #ffffff;            /* ícone branco sólido */
-  opacity: 1;
-}
-
-.sms-helper-alert p,
-.sms-helper-alert strong {
-  margin: 0;
-  line-height: 1.6;
-  color: #ffffff;            /* texto branco sólido */
-  opacity: 1;
-}
+    .sms-helper-alert p,
+    .sms-helper-alert strong {
+      margin: 0;
+      line-height: 1.6;
+      color: #ffffff;
+      opacity: 1;
+    }
 
     .privacy {
       background: var(--light-gray);
@@ -1425,6 +1415,133 @@
       transform: translateY(-3px);
     }
 
+    /* ====== HEADER COM LOGO À ESQUERDA E BOTÃO À DIREITA ====== */
+    @media (min-width: 769px) {
+      .header-container {
+        display: grid;
+        grid-template-columns: auto 1fr auto;
+        align-items: center;
+        gap: 2rem;
+      }
+      
+      .logo {
+        justify-self: start;
+      }
+      
+      .logo-text {
+        font-size: 1.2rem;
+      }
+      
+      nav {
+        justify-self: center;
+        display: flex;
+        gap: 1.5rem;
+        margin: 0;
+      }
+      
+      nav a:last-child {
+        display: none;
+      }
+      
+      /* Botão "Baixar App" separado no canto direito */
+      .header-cta {
+        justify-self: end;
+      }
+      
+      .header-cta .btn-primary {
+        padding: 0.7rem 1.5rem;
+        font-size: 0.95rem;
+        white-space: nowrap;
+      }
+    }
+
+    /* Ajuste para telas médias */
+    @media (min-width: 769px) and (max-width: 1100px) {
+      .header-container {
+        gap: 1rem;
+      }
+      
+      nav {
+        gap: 1rem;
+      }
+      
+      nav a {
+        font-size: 0.9rem;
+      }
+      
+      .header-cta .btn-primary {
+        padding: 0.6rem 1.2rem;
+        font-size: 0.85rem;
+      }
+    }
+
+    /* Para telas grandes */
+    @media (min-width: 1200px) {
+      .header-container {
+        gap: 2.5rem;
+      }
+      
+      nav {
+        gap: 2rem;
+      }
+      
+      .header-cta .btn-primary {
+        padding: 0.8rem 1.8rem;
+        font-size: 1rem;
+      }
+    }
+
+    /* Mobile - mantém layout original */
+    @media (max-width: 768px) {
+      .header-cta {
+        display: none;
+      }
+      
+      .header-container {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        flex-wrap: wrap;
+      }
+      
+      /* Mostra o botão no menu mobile */
+      nav a:last-child {
+        display: block;
+        text-align: center;
+        margin-top: 1rem;
+        background: var(--primary);
+        color: white;
+        padding: 0.8rem;
+        border-radius: 50px;
+        border-bottom: none !important;
+      }
+      
+      nav a:last-child:hover {
+        background: var(--primary-dark);
+      }
+      
+      nav {
+        display: none;
+        width: 100%;
+        flex-direction: column;
+        gap: 0;
+        margin-top: 1rem;
+      }
+      
+      nav.active {
+        display: flex;
+      }
+      
+      nav a {
+        padding: 0.8rem 0;
+        border-bottom: 1px solid rgba(0, 0, 0, 0.05);
+      }
+      
+      .mobile-menu-btn {
+        display: block;
+      }
+    }
+
     @media (max-width: 992px) {
       .hero h2 {
         font-size: 2.2rem;
@@ -1449,31 +1566,6 @@
     }
 
     @media (max-width: 768px) {
-      .header-container {
-        flex-wrap: wrap;
-      }
-      
-      nav {
-        display: none;
-        width: 100%;
-        flex-direction: column;
-        gap: 0;
-        margin-top: 1rem;
-      }
-      
-      nav.active {
-        display: flex;
-      }
-      
-      nav a {
-        padding: 0.8rem 0;
-        border-bottom: 1px solid rgba(0, 0, 0, 0.05);
-      }
-      
-      .mobile-menu-btn {
-        display: block;
-      }
-      
       .hero h2 {
         font-size: 1.8rem;
       }
@@ -1591,6 +1683,7 @@
   </style>
 </head>
 <body>
+  <!-- HEADER COM LOGO À ESQUERDA E BOTÃO À DIREITA -->
   <header>
     <div class="header-container">
       <a href="#home" class="logo">
@@ -1606,16 +1699,22 @@
         <a href="#sobre">Sobre</a>
         <a href="#historia">Nossa História</a>
         <a href="#funcionalidades">Funcionalidades</a>
+        <a href="#comando-voz"><i class="fas fa-microphone-alt"></i> Comando de Voz</a>
         <a href="#video-demo"><i class="fas fa-play-circle"></i> Vídeo Demo</a>
-            <a href="#sms-helper"><i class="fas fa-sms"></i> SMS Helper</a>
+        <a href="#sms-helper"><i class="fas fa-sms"></i> SMS Helper</a>
         <a href="#privacidade">Privacidade</a>
+        <a href="#depoimentos"><i class="fas fa-comments"></i> Depoimentos</a>
         <a href="#faq">FAQ</a>
         <a href="#contato">Contato</a>
-        <a href="#download" class="btn btn-primary">Baixar App</a>
       </nav>
+      
+      <div class="header-cta">
+        <a href="#download" class="btn btn-primary">Baixar App</a>
+      </div>
     </div>
   </header>
 
+  <!-- HERO SECTION COM NOVOS MOCKUPS -->
   <section class="hero" id="home">
     <div class="hero-container">
       <div class="hero-content">
@@ -1632,22 +1731,21 @@
         <div class="phone-mockup">
           <div class="phone-screen">
             <div class="phone-carousel">
+              <!-- Mockup 1 -->
               <div class="phone-slide active">
-                <img src="https://raw.githubusercontent.com/Caerod1980/Imagens-Site-Guardian/9233caf18243efb8858fb15d7990880ecebc593b/assets/img/Mockup%20app%20abertura.jpeg" 
-                     alt="Guardian P2P App">
+                <img src="https://raw.githubusercontent.com/Caerod1980/Imagens-Site-Guardian/bb4b23a92bf0f6ec625b9c34de3f5aa6871d1143/mockup%201.jpg" 
+                     alt="Guardian P2P - Interface Principal" 
+                     style="object-fit: cover;">
               </div>
+              <!-- Mockup 2 -->
               <div class="phone-slide">
-                <img src="https://raw.githubusercontent.com/Caerod1980/Imagens-Site-Guardian/1e05a4d6d5a93497615174b86ed5121e3235ff85/depoimento%201.jpeg" 
-                     alt="Depoimento 1">
-              </div>
-              <div class="phone-slide">
-                <img src="https://raw.githubusercontent.com/Caerod1980/Imagens-Site-Guardian/202c7ee4b548962585fa0389f7892841d0da72c8/depoimento%202.jpeg" 
-                     alt="Depoimento 2">
+                <img src="https://raw.githubusercontent.com/Caerod1980/Imagens-Site-Guardian/bb4b23a92bf0f6ec625b9c34de3f5aa6871d1143/mockup2.jpg" 
+                     alt="Guardian P2P - Configurações" 
+                     style="object-fit: cover;">
               </div>
               <div class="carousel-dots">
                 <span class="carousel-dot active" data-slide="0"></span>
                 <span class="carousel-dot" data-slide="1"></span>
-                <span class="carousel-dot" data-slide="2"></span>
               </div>
             </div>
           </div>
@@ -1656,6 +1754,7 @@
     </div>
   </section>
 
+  <!-- SEÇÃO SOBRE -->
   <section id="sobre" class="section about">
     <div class="section-header">
       <h3 class="section-title">Sobre o Guardian P<span class="p2p-ligadura">2</span>P</h3>
@@ -1679,6 +1778,7 @@
     </div>
   </section>
 
+  <!-- NOSSA HISTÓRIA -->
   <section id="historia" class="section our-story">
     <div class="section-header">
       <h3 class="section-title">Nossa História</h3>
@@ -1731,6 +1831,7 @@
     </div>
   </section>
 
+  <!-- FUNCIONALIDADES -->
   <section id="funcionalidades" class="section">
     <div class="section-header">
       <h3 class="section-title">Funcionalidades</h3>
@@ -1788,7 +1889,7 @@
         </div>
         <div class="feature-text">
           <h5>Compartilhamento Seguro</h5>
-          <p>Apenas contatos autorizados recebem alertas</p>
+          <p>Apenas contatos autorizados recebam alertas</p>
         </div>
       </div>
       <div class="feature-item">
@@ -1803,7 +1904,114 @@
     </div>
   </section>
 
-  <!-- Seção Vídeo de Demonstração -->
+  <!-- COMANDO DE VOZ (NOVA SEÇÃO) -->
+  <section id="comando-voz" class="section comando-voz-section">
+    <div class="section-header">
+      <h3 class="section-title"><i class="fas fa-microphone-alt" style="color: var(--primary);"></i> Comando de Voz</h3>
+      <p class="section-subtitle">Ative alertas de emergência com sua voz</p>
+    </div>
+    
+    <div class="cards">
+      <div class="card">
+        <div class="card-icon" style="background: linear-gradient(135deg, var(--primary) 0%, var(--primary-dark) 100%); color: white;">
+          <i class="fas fa-microphone"></i>
+        </div>
+        <h4>Como funciona?</h4>
+        <p>Configure uma palavra-chave secreta no app. Quando você ativar o "Modo Alerta" e falar essa palavra, o Guardian enviará automaticamente um alerta de emergência para seus contatos autorizados.</p>
+        
+        <div style="background: var(--light); padding: 1.5rem; border-radius: var(--radius); margin-top: 1rem;">
+          <h5 style="color: var(--secondary); margin-bottom: 1rem; display: flex; align-items: center; gap: 0.5rem;">
+            <i class="fas fa-key"></i> Sua Palavra-chave Secreta
+          </h5>
+          <p style="color: var(--dark); margin-bottom: 0.5rem;"><strong>Exemplos:</strong> "socorro guardião", "me ajuda", "código vermelho"</p>
+          <p style="color: var(--gray); font-size: 0.95rem; margin-bottom: 1rem;">
+            <i class="fas fa-lightbulb" style="color: var(--primary);"></i> Escolha uma palavra ou frase que você consegue falar claramente em uma emergência.
+          </p>
+          
+          <div style="display: flex; gap: 1rem; flex-wrap: wrap; align-items: center;">
+            <div style="display: inline-flex; align-items: center; gap: 0.5rem; background: #d4edda; color: #155724; padding: 0.5rem 1rem; border-radius: 50px;">
+              <i class="fas fa-check-circle"></i>
+              <span>Salvo</span>
+            </div>
+            <button class="btn" style="background: var(--secondary); color: white; padding: 0.5rem 1.5rem;">
+              <i class="fas fa-play-circle"></i> Testar Reconhecimento
+            </button>
+          </div>
+        </div>
+      </div>
+      
+      <div class="card">
+        <div class="card-icon" style="background: linear-gradient(135deg, var(--secondary) 0%, var(--secondary-light) 100%); color: white;">
+          <i class="fas fa-lightbulb"></i>
+        </div>
+        <h4>Dicas Importantes</h4>
+        <ul>
+          <li>Use palavras fáceis de pronunciar sob pressão</li>
+          <li>Evite palavras muito comuns do dia a dia</li>
+          <li>Teste em diferentes ambientes (barulhentos/silenciosos)</li>
+          <li>Frases curtas funcionam melhor que palavras únicas</li>
+          <li>Pratique algumas vezes para ter certeza do funcionamento</li>
+        </ul>
+        
+        <div style="background: #fff3cd; border-left: 4px solid #ffc107; padding: 1.2rem; border-radius: 8px; margin-top: 1.5rem;">
+          <div style="display: flex; gap: 0.8rem; align-items: flex-start;">
+            <i class="fas fa-battery-three-quarters" style="color: #856404; font-size: 1.2rem; margin-top: 0.2rem;"></i>
+            <div>
+              <p style="color: #856404; margin: 0; font-weight: 500;">
+                O Modo Alerta consome bateria enquanto ativo. Recomendamos ativar apenas quando necessário.
+              </p>
+              <p style="color: #856404; margin: 0.5rem 0 0 0; font-size: 0.9rem;">
+                <strong>Exemplos de uso:</strong> ao sair à noite, passar por áreas de risco, ou em situações onde suas mãos podem não estar livres.
+              </p>
+            </div>
+          </div>
+        </div>
+        
+        <div style="margin-top: 1.5rem; padding: 1rem; background: var(--light-gray); border-radius: var(--radius); text-align: center;">
+          <p style="color: var(--dark); margin-bottom: 0.5rem; font-weight: 500;">
+            <i class="fas fa-shield-alt" style="color: var(--primary);"></i> Segurança Dupla
+          </p>
+          <p style="color: var(--gray); font-size: 0.9rem; margin: 0;">
+            O Comando de Voz só funciona quando o Modo Alerta está ativo, prevenindo ativações acidentais.
+          </p>
+        </div>
+      </div>
+    </div>
+    
+    <div style="max-width: 800px; margin: 2.5rem auto 0; background: white; padding: 1.5rem; border-radius: var(--radius); box-shadow: var(--shadow);">
+      <div style="display: flex; gap: 1rem; align-items: flex-start;">
+        <div style="width: 50px; height: 50px; background: var(--primary); color: white; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 1.2rem; flex-shrink: 0;">
+          <i class="fas fa-mobile-alt"></i>
+        </div>
+        <div>
+          <h5 style="color: var(--secondary); margin-bottom: 0.5rem;">Configuração no App</h5>
+          <p style="color: var(--gray); margin-bottom: 0.5rem;">
+            Acesse <strong>Configurações → Comando de Voz</strong> no app Guardian P<span class="p2p-ligadura">2</span>P para definir sua palavra-chave e testar o reconhecimento.
+          </p>
+          <div style="display: flex; gap: 0.8rem; margin-top: 1rem; flex-wrap: wrap;">
+            <div style="display: inline-flex; align-items: center; gap: 0.5rem; background: var(--light); padding: 0.4rem 0.8rem; border-radius: 50px;">
+              <i class="fab fa-android" style="color: #3DDC84;"></i>
+              <span style="font-size: 0.9rem;">Guardian P2P</span>
+            </div>
+            <div style="display: inline-flex; align-items: center; gap: 0.5rem; background: var(--light); padding: 0.4rem 0.8rem; border-radius: 50px;">
+              <i class="fas fa-users" style="color: var(--secondary);"></i>
+              <span style="font-size: 0.9rem;">Contatos Ativos</span>
+            </div>
+            <div style="display: inline-flex; align-items: center; gap: 0.5rem; background: var(--light); padding: 0.4rem 0.8rem; border-radius: 50px;">
+              <i class="fas fa-history" style="color: var(--primary);"></i>
+              <span style="font-size: 0.9rem;">Histórico de Alertas</span>
+            </div>
+            <div style="display: inline-flex; align-items: center; gap: 0.5rem; background: var(--primary); color: white; padding: 0.4rem 0.8rem; border-radius: 50px;">
+              <i class="fas fa-cog"></i>
+              <span style="font-size: 0.9rem;">Configurações</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- VÍDEO DE DEMONSTRAÇÃO -->
   <section id="video-demo" class="section video-demo-section">
     <div class="section-header">
       <h3 class="section-title"><i class="fas fa-play-circle" style="color: var(--primary);"></i> Vídeo de Demonstração</h3>
@@ -1833,7 +2041,7 @@
     </div>
   </section>
 
-  <!-- Seção Guardian SMS Helper -->
+  <!-- SMS HELPER -->
   <section id="sms-helper" class="section sms-helper-section">
     <div class="section-header">
       <h3 class="section-title"><i class="fas fa-sms" style="color: var(--primary);"></i> Guardian SMS Helper</h3>
@@ -1841,7 +2049,6 @@
     </div>
     
     <div class="sms-helper-container">
-      <!-- Card Principal -->
       <div class="sms-helper-main">
         <div class="sms-helper-icon">
           <i class="fas fa-mobile-alt"></i>
@@ -1856,29 +2063,24 @@
         </a>
       </div>
 
-     <!-- Como Funciona -->
-<div class="sms-helper-flow">
-  <h5><i class="fas fa-route"></i> Como Funciona</h5>
+      <div class="sms-helper-flow">
+        <h5><i class="fas fa-route"></i> Como Funciona</h5>
+        <div class="flow-steps">
+          <div class="flow-step">
+            <div class="step-number">1</div>
+            <p>Configure seus contatos de emergência no Guardian P2P</p>
+          </div>
+          <div class="flow-step">
+            <div class="step-number">2</div>
+            <p>Em uma emergência, acione o alerta no Guardian P2P</p>
+          </div>
+          <div class="flow-step">
+            <div class="step-number">3</div>
+            <p>Sem internet? O SMS Helper envia SMS com sua localização</p>
+          </div>
+        </div>
+      </div>
 
-  <div class="flow-steps">
-    <div class="flow-step">
-      <div class="step-number">1</div>
-      <p>Configure seus contatos de emergência no Guardian P2P</p>
-    </div>
-
-    <div class="flow-step">
-      <div class="step-number">2</div>
-      <p>Em uma emergência, acione o alerta no Guardian P2P</p>
-    </div>
-
-    <div class="flow-step">
-      <div class="step-number">3</div>
-      <p>Sem internet? O SMS Helper envia SMS com sua localização</p>
-    </div>
-  </div>
-</div>
-
-      <!-- Recursos e Privacidade -->
       <div class="sms-helper-features">
         <div class="sms-feature-card">
           <h5><i class="fas fa-star" style="color: #FFD700;"></i> Recursos</h5>
@@ -1902,7 +2104,6 @@
         </div>
       </div>
 
-      <!-- Alerta Importante -->
       <div class="sms-helper-alert">
         <i class="fas fa-info-circle"></i>
         <p><strong>Por que SMS?</strong> O SMS tradicional é o único método de comunicação que funciona sem internet. 
@@ -1912,6 +2113,7 @@
     </div>
   </section>
 
+  <!-- PRIVACIDADE -->
   <section id="privacidade" class="section privacy">
     <div class="section-header">
       <h3 class="section-title">Privacidade e Segurança</h3>
@@ -1947,6 +2149,61 @@
     </div>
   </section>
 
+  <!-- DEPOIMENTOS (NOVA SEÇÃO) -->
+  <section id="depoimentos" class="section depoimentos-section">
+    <div class="section-header">
+      <h3 class="section-title"><i class="fas fa-comments" style="color: var(--primary);"></i> Depoimentos</h3>
+      <p class="section-subtitle">Veja o que nossos usuários dizem sobre o Guardian P<span class="p2p-ligadura">2</span>P</p>
+    </div>
+    
+    <div class="cards">
+      <div class="card">
+        <div class="card-icon" style="background: linear-gradient(135deg, var(--primary) 0%, var(--primary-dark) 100%); color: white;">
+          <i class="fas fa-user"></i>
+        </div>
+        <h4>Silvia Caetano</h4>
+        <p style="font-style: italic; color: var(--dark);">"Acompanhei o nascimento e o desenvolvimento deste aplicativo, e vi o esforço e a dedicação em cada detalhe. O aplicativo é rápido para instalar e muito prático na utilização. 
+Acredito que ajudará muitas pessoas em situações de risco."</p>
+        <div style="color: var(--primary); margin-top: 1rem;">
+        </div>
+      </div>
+      
+      <div class="card">
+        <div class="card-icon" style="background: linear-gradient(135deg, var(--secondary) 0%, var(--secondary-light) 100%); color: white;">
+          <i class="fas fa-user-friends"></i>
+        </div>
+        <h4>Danielle</h4>
+        <p style="font-style: italic; color: var(--dark);">"Durante o período de construção do Guardian, vi o quanto ele foi pensado com cuidado e propósito. Acredito que será uma ferramenta importante para ajudar as pessoas, principalmente nós mulheres, trazendo mais segurança. Um app simples, prático, basta apertar o botão de SOS que já acionamos o pedido de ajuda."</p>
+        <div style="color: var(--primary); margin-top: 1rem;">
+        </div>
+      </div>
+      
+      <div class="card">
+        <div class="card-icon" style="background: linear-gradient(135deg, #457B9D 0%, #1D3557 100%); color: white;">
+          <i class="fas fa-shield-alt"></i>
+        </div>
+        <h4>Priscila Lelis</h4>
+        <p style="font-style: italic; color: var(--dark);">"Agradeço por ter desenvolvido esse app."</p>
+        <div style="color: var(--primary); margin-top: 1rem;">
+        </div>
+      </div>
+    </div>
+    
+    <div style="text-align: center; margin-top: 4rem; padding: 2rem; background: linear-gradient(135deg, var(--light) 0%, var(--light-gray) 100%); border-radius: var(--radius);">
+      <h4 style="color: var(--secondary); margin-bottom: 1rem;">Compartilhe sua experiência</h4>
+      <p style="color: var(--gray); margin-bottom: 1.5rem; max-width: 600px; margin-left: auto; margin-right: auto;">
+        Sua opinião é muito importante para nós e pode ajudar outras pessoas a conhecerem o Guardian P2P.
+      </p>
+      <a href="#contato" class="btn btn-primary">
+        <i class="fas fa-paper-plane"></i> Enviar seu depoimento
+      </a>
+      <p style="color: var(--gray); font-size: 0.9rem; margin-top: 1rem;">
+        Os melhores depoimentos serão publicados aqui!
+      </p>
+    </div>
+  </section>
+
+  <!-- FAQ -->
   <section id="faq" class="section">
     <div class="section-header">
       <h3 class="section-title">Perguntas Frequentes</h3>
@@ -2016,10 +2273,11 @@
     </div>
   </section>
 
+  <!-- CONTATO COM EMAILJS ATUALIZADO -->
   <section id="contato" class="section">
     <div class="section-header">
       <h3 class="section-title">Entre em Contato</h3>
-      <p class="section-subtitle">Tire suas dúvidas ou envie sugestões</p>
+      <p class="section-subtitle">Envie seu depoimento, tire dúvidas ou dê sugestões</p>
     </div>
     
     <div class="contact-info">
@@ -2033,9 +2291,9 @@
         </div>
       </div>
       <div class="contact-item">
-        <a href="https://wa.me/5514996593929" target="_blank" class="contact-icon whatsapp-icon">
+        <div class="contact-icon whatsapp-icon">
           <i class="fab fa-whatsapp"></i>
-        </a>
+        </div>
         <div>
           <h5>WhatsApp</h5>
           <a href="https://wa.me/5514996593929" target="_blank">(14) 99659-3929</a>
@@ -2048,24 +2306,52 @@
       
       <form id="contact-form-emailjs">
         <div class="form-group">
-          <label for="name">Seu Nome</label>
+          <label for="name">Seu Nome *</label>
           <input type="text" id="name" name="from_name" class="form-control" placeholder="Digite seu nome" required>
         </div>
         <div class="form-group">
-          <label for="email">Seu E-mail</label>
+          <label for="email">Seu E-mail *</label>
           <input type="email" id="email" name="from_email" class="form-control" placeholder="Digite seu e-mail" required>
         </div>
         <div class="form-group">
-          <label for="message">Sua Mensagem</label>
-          <textarea id="message" name="message" class="form-control" placeholder="Digite sua mensagem" required></textarea>
+          <label for="message">Seu Depoimento ou Mensagem *</label>
+          <textarea id="message" name="message" class="form-control" placeholder="Compartilhe sua experiência, tire dúvidas ou deixe sugestões..." required rows="5"></textarea>
+          <small style="display: block; text-align: right; color: var(--gray); margin-top: 0.5rem;">Máximo 1000 caracteres</small>
         </div>
-        <button type="submit" class="btn btn-primary" style="width: 100%;" id="submit-btn">
+        
+        <div class="form-group" style="margin-top: 1.5rem;">
+          <label style="display: flex; align-items: center; gap: 0.5rem; margin-bottom: 0.5rem;">
+            <input type="checkbox" id="permissao" name="permissao" style="width: auto;">
+            <span>Autorizo a publicação do meu depoimento (opcional)</span>
+          </label>
+          <small style="color: var(--gray);">Se marcado, seu depoimento poderá ser publicado na seção de depoimentos do site.</small>
+        </div>
+        
+        <button type="submit" class="btn btn-primary" style="width: 100%; margin-top: 1rem;" id="submit-btn">
           <i class="fas fa-paper-plane"></i> Enviar Mensagem
         </button>
       </form>
+      
+      <div style="text-align: center; margin-top: 2rem; padding-top: 2rem; border-top: 1px solid var(--light-gray);">
+        <p style="color: var(--gray); font-size: 0.9rem; margin-bottom: 1rem;">
+          Problemas com o formulário? Use:
+        </p>
+        <div style="display: flex; gap: 1rem; justify-content: center; flex-wrap: wrap;">
+          <a href="mailto:caerod@gmail.com?subject=Depoimento Guardian P2P" 
+             class="btn" style="background: var(--secondary); color: white; min-width: 180px;">
+            <i class="fas fa-envelope"></i> E-mail Direto
+          </a>
+          <a href="https://wa.me/5514996593929" 
+             target="_blank" 
+             class="btn" style="background: #25D366; color: white; min-width: 180px;">
+            <i class="fab fa-whatsapp"></i> WhatsApp
+          </a>
+        </div>
+      </div>
     </div>
   </section>
 
+  <!-- CTA DOWNLOAD -->
   <section id="download" class="cta">
     <div class="cta-container">
       <h3>Baixe o App Agora</h3>
@@ -2089,6 +2375,7 @@
     </div>
   </section>
 
+  <!-- FOOTER -->
   <footer>
     <div class="footer-container">
       <div class="footer-col">
@@ -2104,7 +2391,9 @@
         <a href="#sobre">Sobre o App</a>
         <a href="#historia">Nossa História</a>
         <a href="#funcionalidades">Funcionalidades</a>
+        <a href="#comando-voz">Comando de Voz</a>
         <a href="#privacidade">Privacidade</a>
+        <a href="#depoimentos">Depoimentos</a>
         <a href="#faq">FAQ</a>
         <a href="#contato">Contato</a>
         <a href="#download">Download</a>
@@ -2152,6 +2441,7 @@
   </button>
 
   <script>
+    // Mobile Menu
     const mobileMenuBtn = document.getElementById('mobileMenuBtn');
     const mainNav = document.getElementById('mainNav');
     
@@ -2159,13 +2449,13 @@
       mainNav.classList.toggle('active');
     });
     
-    // Fechar menu ao clicar em qualquer item
     mainNav.querySelectorAll('a').forEach(link => {
       link.addEventListener('click', () => {
         mainNav.classList.remove('active');
       });
     });
     
+    // Scroll Animations
     function checkVisibility() {
       document.querySelectorAll(".section").forEach(section => {
         const top = section.getBoundingClientRect().top;
@@ -2175,12 +2465,14 @@
     window.addEventListener("scroll", checkVisibility);
     window.addEventListener("load", checkVisibility);
 
+    // Scroll to Top Button
     const scrollTop = document.getElementById("scrollTop");
     window.addEventListener("scroll", () => {
       scrollTop.classList.toggle("show", window.scrollY > 300);
     });
     scrollTop.addEventListener("click", () => window.scrollTo({ top: 0, behavior: "smooth" }));
 
+    // Smooth Scrolling for Anchor Links
     document.querySelectorAll('a[href^="#"]').forEach(anchor => {
       anchor.addEventListener('click', function (e) {
         e.preventDefault();
@@ -2194,38 +2486,115 @@
       });
     });
 
-    document.getElementById('contact-form-emailjs').addEventListener('submit', function(event) {
+    // EmailJS Configuration
+    function inicializarEmailJS() {
+      try {
+        console.log('🔄 Inicializando EmailJS...');
+        emailjs.init("lqVaXvV94Acc_vspb");
+        console.log('✅ EmailJS inicializado');
+        return true;
+      } catch (error) {
+        console.error('❌ Erro na inicialização:', error);
+        return false;
+      }
+    }
+
+    // Contact Form with EmailJS
+    document.getElementById('contact-form-emailjs')?.addEventListener('submit', async function(event) {
       event.preventDefault();
       
       const submitBtn = document.getElementById('submit-btn');
       const feedback = document.getElementById('form-feedback');
+      const form = this;
       
+      // Validation
+      const nome = document.getElementById('name').value.trim();
+      const email = document.getElementById('email').value.trim();
+      const mensagem = document.getElementById('message').value.trim();
+      
+      if (!nome || !email || !mensagem) {
+        mostrarFeedback('Por favor, preencha todos os campos obrigatórios.', 'error', feedback);
+        return;
+      }
+      
+      if (mensagem.length > 1000) {
+        mostrarFeedback('A mensagem deve ter no máximo 1000 caracteres.', 'error', feedback);
+        return;
+      }
+      
+      if (!validarEmail(email)) {
+        mostrarFeedback('Por favor, insira um e-mail válido.', 'error', feedback);
+        return;
+      }
+      
+      // Button state
+      const originalText = submitBtn.innerHTML;
       submitBtn.innerHTML = '<i class="fas fa-spinner fa-spin"></i> Enviando...';
+      submitBtn.disabled = true;
       submitBtn.classList.add('loading');
-      feedback.style.display = 'none';
       
-      emailjs.sendForm('service_z0tyf6i', 'template_kkfy02a', this)
-        .then(function() {
-          feedback.textContent = '✅ Mensagem enviada com sucesso! Entraremos em contato em breve.';
-          feedback.className = 'form-feedback form-success';
-          feedback.style.display = 'block';
+      feedback.style.display = 'none';
+      feedback.className = 'form-feedback';
+      
+      try {
+        console.log('📤 Enviando formulário...');
+        
+        // Send with NEW Service ID
+        const response = await emailjs.sendForm(
+          'service_bphgacd', // NOVO SERVICE ID
+          'template_kkfy02a',
+          form
+        );
+        
+        console.log('📨 Resposta do EmailJS:', response);
+        
+        if (response.status === 200) {
+          // SUCCESS
+          mostrarFeedback(
+            '✅ <strong>Depoimento enviado com sucesso!</strong><br>' +
+            'Obrigado por compartilhar sua experiência. Se autorizou a publicação, seu depoimento poderá aparecer no site!',
+            'success', 
+            feedback
+          );
           
-          document.getElementById('contact-form-emailjs').reset();
+          form.reset();
           
-          setTimeout(() => {
-            submitBtn.innerHTML = '<i class="fas fa-paper-plane"></i> Enviar Mensagem';
-            submitBtn.classList.remove('loading');
-          }, 2000);
-        }, function(error) {
-          feedback.textContent = '❌ Erro ao enviar mensagem. Tente novamente ou entre em contato diretamente por email/whatsapp.';
-          feedback.className = 'form-feedback form-error';
-          feedback.style.display = 'block';
+        } else {
+          throw new Error(`Status inesperado: ${response.status}`);
+        }
+        
+      } catch (error) {
+        console.error('❌ Erro no envio:', error);
+        
+        let mensagemErro = '❌ <strong>Erro ao enviar mensagem.</strong> ';
+        
+        if (error.text) {
+          console.log('Detalhes do erro:', error.text);
           
-          submitBtn.innerHTML = '<i class="fas fa-paper-plane"></i> Enviar Mensagem';
+          if (error.text.includes('Invalid grant') || error.text.includes('Gmail_API')) {
+            mensagemErro += 'Problema de conexão com o serviço de e-mail. ';
+          } else if (error.text.includes('Service not found')) {
+            mensagemErro += 'Serviço não encontrado. ';
+          } else if (error.text.includes('Template not found')) {
+            mensagemErro += 'Template não encontrado. ';
+          } else if (error.text.includes('Invalid login')) {
+            mensagemErro += 'Problema de autenticação. ';
+          } else {
+            mensagemErro += 'Tente novamente em alguns instantes.';
+          }
+        } else {
+          mensagemErro += 'Verifique sua conexão com a internet.';
+        }
+        
+        mostrarFeedback(mensagemErro, 'error', feedback);
+        
+      } finally {
+        setTimeout(() => {
+          submitBtn.innerHTML = originalText;
+          submitBtn.disabled = false;
           submitBtn.classList.remove('loading');
-          
-          console.log('Erro EmailJS:', error);
-        });
+        }, 1500);
+      }
     });
 
     // FAQ Toggle
@@ -2236,19 +2605,23 @@
       });
     });
 
-    // Carrossel do Mockup
+    // Carrossel do Mockup - 2 slides only
     const slides = document.querySelectorAll('.phone-slide');
     const dots = document.querySelectorAll('.carousel-dot');
     let currentSlide = 0;
     let carouselInterval;
 
     function showSlide(index) {
+      if (index >= slides.length) index = 0;
+      if (index < 0) index = slides.length - 1;
+      
       slides.forEach((slide, i) => {
         slide.classList.remove('active');
-        dots[i].classList.remove('active');
+        dots[i]?.classList.remove('active');
       });
+      
       slides[index].classList.add('active');
-      dots[index].classList.add('active');
+      dots[index]?.classList.add('active');
       currentSlide = index;
     }
 
@@ -2257,12 +2630,10 @@
       showSlide(next);
     }
 
-    // Auto-play a cada 5 segundos
     function startCarousel() {
       carouselInterval = setInterval(nextSlide, 5000);
     }
 
-    // Clique nos dots
     dots.forEach((dot, index) => {
       dot.addEventListener('click', () => {
         clearInterval(carouselInterval);
@@ -2271,8 +2642,54 @@
       });
     });
 
-    // Iniciar carrossel
-    startCarousel();
+    // Helper Functions
+    function mostrarFeedback(mensagem, tipo, elemento) {
+      elemento.innerHTML = mensagem;
+      elemento.className = `form-feedback ${tipo === 'success' ? 'form-success' : 'form-error'}`;
+      elemento.style.display = 'block';
+      
+      elemento.style.opacity = '0';
+      elemento.style.transform = 'translateY(-10px)';
+      
+      setTimeout(() => {
+        elemento.style.opacity = '1';
+        elemento.style.transform = 'translateY(0)';
+        elemento.style.transition = 'all 0.3s ease';
+      }, 10);
+      
+      elemento.scrollIntoView({ behavior: 'smooth', block: 'center' });
+      
+      const tempo = tipo === 'error' ? 15000 : 8000;
+      setTimeout(() => {
+        if (elemento.style.display === 'block') {
+          elemento.style.opacity = '0';
+          setTimeout(() => {
+            elemento.style.display = 'none';
+          }, 300);
+        }
+      }, tempo);
+    }
+
+    function validarEmail(email) {
+      const re = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+      return re.test(email);
+    }
+
+    // Initialize everything
+    document.addEventListener('DOMContentLoaded', function() {
+      console.log('🚀 Guardian P2P - Inicializando...');
+      
+      // Start carousel
+      startCarousel();
+      
+      // Initialize EmailJS
+      if (typeof emailjs !== 'undefined') {
+        setTimeout(() => {
+          inicializarEmailJS();
+        }, 1000);
+      }
+    });
   </script>
 </body>
 </html>
+
