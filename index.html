@@ -44,6 +44,21 @@
       --shadow-lg: 0 10px 30px rgba(0, 0, 0, 0.12);
       --radius: 12px;
       --transition: all 0.3s ease;
+      
+      /* NOVA PALETA BASEADA NO APLICATIVO */
+      --app-blue-light: #E0F2FE;
+      --app-blue-medium: #3B82F6;
+      --app-blue-dark: #1E40AF;
+      --app-cyan-light: #A8DADC;
+      --app-cyan-medium: #457B9D;
+      --app-background: #F8FAFC;
+      --app-card-bg: #FFFFFF;
+      --app-text: #1E293B;
+      --app-text-light: #64748B;
+      --app-success-light: #DCFCE7;
+      --app-success: #22C55E;
+      --app-warning-light: #FEF3C7;
+      --app-warning: #F59E0B;
     }
 
     * {
@@ -59,8 +74,8 @@
 
     body {
       font-family: 'Inter', sans-serif;
-      color: var(--dark);
-      background: var(--white);
+      color: var(--app-text);
+      background: var(--app-background);
       line-height: 1.7;
       overflow-x: hidden;
       text-rendering: optimizeLegibility;
@@ -87,7 +102,7 @@
 
     p {
       margin-bottom: 1.2rem;
-      color: var(--gray);
+      color: var(--app-text-light);
     }
 
     a {
@@ -255,7 +270,7 @@
     }
 
     .hero {
-      background: linear-gradient(135deg, var(--secondary) 0%, var(--secondary-light) 100%);
+      background: linear-gradient(135deg, var(--app-blue-dark) 0%, var(--app-blue-medium) 100%);
       color: var(--white);
       padding: 6rem 5%;
       position: relative;
@@ -451,7 +466,7 @@
     }
 
     .section-title {
-      color: var(--secondary);
+      color: var(--app-text);
       font-size: 2.5rem;
       margin-bottom: 1rem;
       position: relative;
@@ -466,12 +481,12 @@
       transform: translateX(-50%);
       width: 60px;
       height: 4px;
-      background: var(--primary);
+      background: var(--app-blue-medium);
       border-radius: 2px;
     }
 
     .section-subtitle {
-      color: var(--gray);
+      color: var(--app-text-light);
       font-size: 1.2rem;
     }
 
@@ -484,7 +499,7 @@
     }
 
     .card {
-      background: var(--white);
+      background: var(--app-card-bg);
       border-radius: var(--radius);
       padding: 2.5rem 2rem;
       box-shadow: var(--shadow);
@@ -504,7 +519,7 @@
     .card-icon {
       width: 70px;
       height: 70px;
-      background: var(--light);
+      background: var(--app-blue-light);
       border-radius: 50%;
       display: flex;
       align-items: center;
@@ -515,7 +530,7 @@
     }
 
     .card h4 {
-      color: var(--secondary);
+      color: var(--app-text);
       margin-bottom: 1rem;
     }
 
@@ -543,16 +558,16 @@
       top: 0.6rem;
       width: 8px;
       height: 8px;
-      background: var(--primary);
+      background: var(--app-blue-medium);
       border-radius: 50%;
     }
 
     .about {
-      background: var(--light-gray);
+      background: var(--app-background);
     }
 
     .our-story {
-      background: linear-gradient(135deg, var(--secondary) 0%, #1a3a5c 100%);
+      background: linear-gradient(135deg, var(--app-blue-dark) 0%, #1a3a5c 100%);
       position: relative;
       overflow: hidden;
     }
@@ -624,7 +639,7 @@
       padding: 2.5rem;
       box-shadow: var(--shadow);
       margin: 2.5rem 0;
-      border-left: 4px solid var(--primary);
+      border-left: 4px solid var(--app-blue-medium);
     }
 
     .stats-grid {
@@ -692,15 +707,16 @@
       align-items: center;
       gap: 1rem;
       padding: 1.5rem;
-      background: var(--white);
+      background: var(--app-card-bg);
       border-radius: var(--radius);
       box-shadow: var(--shadow);
+      border-left: 3px solid var(--primary);
     }
 
     .feature-icon {
       width: 50px;
       height: 50px;
-      background: var(--light);
+      background: var(--app-blue-light);
       border-radius: 50%;
       display: flex;
       align-items: center;
@@ -713,26 +729,28 @@
     .feature-text h5 {
       margin-bottom: 0.3rem;
       font-size: 1.1rem;
+      color: var(--app-text);
     }
 
     .feature-text p {
       margin: 0;
       font-size: 0.9rem;
+      color: var(--app-text-light);
     }
 
     /* ====== SEÇÃO COMANDO DE VOZ ====== */
     .comando-voz-section {
-      background: linear-gradient(135deg, #f1faee 0%, #e8f4f8 100%);
+      background: var(--app-background);
     }
 
     /* ====== SEÇÃO DEPOIMENTOS ====== */
     .depoimentos-section {
-      background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);
+      background: var(--app-background);
     }
 
     /* ====== SEÇÃO VÍDEO DEMO ====== */
     .video-demo-section {
-      background: linear-gradient(135deg, var(--light) 0%, var(--white) 100%);
+      background: var(--app-background);
     }
 
     .video-container {
@@ -766,7 +784,7 @@
     }
 
     .video-description h4 {
-      color: var(--secondary);
+      color: var(--app-text);
       margin-bottom: 1rem;
     }
 
@@ -783,21 +801,22 @@
       display: flex;
       align-items: center;
       gap: 0.5rem;
-      background: var(--white);
+      background: var(--app-blue-light);
       padding: 0.5rem 1rem;
       border-radius: 50px;
       box-shadow: var(--shadow);
       font-size: 0.9rem;
-      color: var(--dark);
+      color: var(--app-text);
+      border: none;
     }
 
     .video-features li i {
-      color: var(--primary);
+      color: var(--app-blue-medium);
     }
 
     /* ====== SEÇÃO SMS HELPER ====== */
     .sms-helper-section {
-      background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);
+      background: var(--app-background);
     }
 
     .sms-helper-container {
@@ -809,12 +828,12 @@
     }
 
     .sms-helper-main {
-      background: var(--white);
+      background: var(--app-card-bg);
       border-radius: var(--radius);
       padding: 2.5rem;
       text-align: center;
       box-shadow: var(--shadow-lg);
-      border-left: 5px solid var(--primary);
+      border-left: 5px solid var(--app-blue-medium);
     }
 
     .sms-helper-icon {
@@ -822,7 +841,7 @@
       display: inline-block;
       width: 80px;
       height: 80px;
-      background: linear-gradient(135deg, var(--primary) 0%, var(--primary-dark) 100%);
+      background: linear-gradient(135deg, var(--app-blue-medium) 0%, var(--app-blue-dark) 100%);
       border-radius: 50%;
       display: flex;
       align-items: center;
@@ -839,7 +858,7 @@
       position: absolute;
       bottom: -5px;
       right: -10px;
-      background: var(--secondary);
+      background: var(--app-blue-dark);
       color: var(--white);
       font-size: 0.7rem;
       font-weight: bold;
@@ -848,20 +867,20 @@
     }
 
     .sms-helper-main h4 {
-      color: var(--secondary);
+      color: var(--app-text);
       margin-bottom: 1rem;
       font-size: 1.5rem;
     }
 
     .sms-helper-description {
-      color: var(--gray);
+      color: var(--app-text-light);
       max-width: 600px;
       margin: 0 auto 1.5rem;
       line-height: 1.7;
     }
 
     .sms-helper-flow {
-      background: var(--white);
+      background: var(--app-card-bg);
       border-radius: var(--radius);
       padding: 2rem;
       box-shadow: var(--shadow);
@@ -869,14 +888,14 @@
 
     .sms-helper-flow h5 {
       text-align: center;
-      color: var(--secondary);
+      color: var(--app-text);
       margin-bottom: 1.5rem;
       font-size: 1.2rem;
     }
 
     .sms-helper-flow h5 i {
       margin-right: 0.5rem;
-      color: var(--primary);
+      color: var(--app-blue-medium);
     }
 
     .flow-steps {
@@ -898,7 +917,7 @@
     .step-number {
       width: 40px;
       height: 40px;
-      background: var(--primary);
+      background: var(--app-blue-medium);
       color: var(--white);
       border-radius: 50%;
       display: flex;
@@ -911,12 +930,12 @@
 
     .flow-step p {
       font-size: 0.9rem;
-      color: var(--dark);
+      color: var(--app-text);
       margin: 0;
     }
 
     .flow-arrow {
-      color: var(--primary);
+      color: var(--app-blue-medium);
       font-size: 1.2rem;
     }
 
@@ -927,15 +946,16 @@
     }
 
     .sms-feature-card {
-      background: var(--white);
+      background: var(--app-card-bg);
       border-radius: var(--radius);
       padding: 1.5rem;
       box-shadow: var(--shadow);
+      border-top: 3px solid var(--primary);
     }
 
     /* Título */
     .sms-feature-card h5 {
-      color: var(--secondary);
+      color: var(--app-text);
       margin-bottom: 1.2rem;
       font-size: 1.1rem;
       display: flex;
@@ -958,10 +978,11 @@
       gap: 0.75rem;
       padding: 0.75rem 1rem;
       font-size: 0.95rem;
-      color: var(--dark);
+      color: var(--app-text);
       border: none;
-      background: #ffffff;
-      border-radius: 999px;
+      background: var(--app-blue-light);
+      border-radius: 8px;
+      margin-bottom: 0.5rem;
     }
 
     /* REMOVE QUALQUER MARCADOR/PONTO EXTRA */
@@ -973,14 +994,14 @@
 
     /* Ícone */
     .sms-feature-card li i {
-      color: #e53935;
+      color: var(--app-blue-medium);
       font-size: 1rem;
       width: 20px;
       flex-shrink: 0;
     }
 
     .sms-helper-alert {
-      background: linear-gradient(135deg, var(--primary) 0%, var(--primary-dark) 100%);
+      background: linear-gradient(135deg, var(--app-blue-medium) 0%, var(--app-blue-dark) 100%);
       color: #ffffff;
       border-radius: var(--radius);
       padding: 1.5rem 2rem;
@@ -1006,12 +1027,12 @@
     }
 
     .privacy {
-      background: var(--light-gray);
+      background: var(--app-background);
     }
 
     .privacy .card a {
       display: inline-block;
-      background: var(--secondary);
+      background: var(--app-blue-medium);
       color: var(--white);
       padding: 0.6rem 1.2rem;
       border-radius: 50px;
@@ -1023,12 +1044,12 @@
     }
 
     .privacy .card a:hover {
-      background: var(--secondary-light);
+      background: var(--app-blue-dark);
       transform: translateY(-2px);
     }
 
     .cta {
-      background: linear-gradient(135deg, var(--secondary) 0%, var(--secondary-light) 100%);
+      background: linear-gradient(135deg, var(--app-blue-dark) 0%, var(--app-blue-medium) 100%);
       color: var(--white);
       text-align: center;
       padding: 5rem 5%;
@@ -1107,7 +1128,7 @@
     .contact-form {
       max-width: 700px;
       margin: 0 auto;
-      background: var(--white);
+      background: var(--app-card-bg);
       border-radius: var(--radius);
       padding: 3rem;
       box-shadow: var(--shadow);
@@ -1122,7 +1143,7 @@
       display: block;
       margin-bottom: 0.5rem;
       font-weight: 500;
-      color: var(--dark);
+      color: var(--app-text);
     }
 
     .form-control {
@@ -1137,8 +1158,8 @@
 
     .form-control:focus {
       outline: none;
-      border-color: var(--secondary-light);
-      box-shadow: 0 0 0 3px rgba(29, 53, 87, 0.1);
+      border-color: var(--app-blue-medium);
+      box-shadow: 0 0 0 3px rgba(59, 130, 246, 0.1);
     }
 
     textarea.form-control {
@@ -1153,7 +1174,7 @@
     }
 
     .faq-item {
-      background: var(--white);
+      background: var(--app-card-bg);
       border-radius: var(--radius);
       margin-bottom: 1rem;
       box-shadow: var(--shadow);
@@ -1170,18 +1191,18 @@
     }
 
     .faq-question:hover {
-      background: var(--light-gray);
+      background: var(--app-blue-light);
     }
 
     .faq-question h4 {
       margin: 0;
       font-size: 1rem;
       font-weight: 600;
-      color: var(--dark);
+      color: var(--app-text);
     }
 
     .faq-question i {
-      color: var(--primary);
+      color: var(--app-blue-medium);
       transition: transform 0.3s ease;
     }
 
@@ -1202,7 +1223,7 @@
     .faq-answer p {
       padding: 0 1.5rem 1.25rem;
       margin: 0;
-      color: var(--gray);
+      color: var(--app-text-light);
       line-height: 1.6;
     }
 
@@ -1218,8 +1239,9 @@
       align-items: center;
       gap: 1rem;
       padding: 1.5rem;
-      background: var(--light-gray);
+      background: var(--app-blue-light);
       border-radius: var(--radius);
+      border-left: 3px solid var(--primary);
     }
 
     .contact-icon {
@@ -1259,7 +1281,7 @@
     }
     
     .form-success {
-      background: #d4edda;
+      background: var(--app-success-light);
       color: #155724;
       border: 1px solid #c3e6cb;
     }
@@ -1390,7 +1412,7 @@
       position: fixed;
       bottom: 25px;
       right: 25px;
-      background: var(--primary);
+      background: var(--app-blue-medium);
       color: var(--white);
       border: none;
       border-radius: 50%;
@@ -1411,7 +1433,7 @@
     }
 
     #scrollTop:hover {
-      background: var(--primary-dark);
+      background: var(--app-blue-dark);
       transform: translateY(-3px);
     }
 
@@ -1907,33 +1929,33 @@
   <!-- COMANDO DE VOZ (NOVA SEÇÃO) -->
   <section id="comando-voz" class="section comando-voz-section">
     <div class="section-header">
-      <h3 class="section-title"><i class="fas fa-microphone-alt" style="color: var(--primary);"></i> Comando de Voz</h3>
+      <h3 class="section-title"><i class="fas fa-microphone-alt" style="color: var(--app-blue-medium);"></i> Comando de Voz</h3>
       <p class="section-subtitle">Ative alertas de emergência com sua voz</p>
     </div>
     
     <div class="cards">
       <div class="card">
-        <div class="card-icon" style="background: linear-gradient(135deg, var(--primary) 0%, var(--primary-dark) 100%); color: white;">
+        <div class="card-icon" style="background: linear-gradient(135deg, var(--app-blue-medium) 0%, var(--app-blue-dark) 100%); color: white;">
           <i class="fas fa-microphone"></i>
         </div>
         <h4>Como funciona?</h4>
         <p>Configure uma palavra-chave secreta no app. Quando você ativar o "Modo Alerta" e falar essa palavra, o Guardian enviará automaticamente um alerta de emergência para seus contatos autorizados.</p>
         
-        <div style="background: var(--light); padding: 1.5rem; border-radius: var(--radius); margin-top: 1rem;">
-          <h5 style="color: var(--secondary); margin-bottom: 1rem; display: flex; align-items: center; gap: 0.5rem;">
-            <i class="fas fa-key"></i> Sua Palavra-chave Secreta
+        <div style="background: var(--app-blue-light); padding: 1.5rem; border-radius: var(--radius); margin-top: 1rem;">
+          <h5 style="color: var(--app-text); margin-bottom: 1rem; display: flex; align-items: center; gap: 0.5rem;">
+            <i class="fas fa-key" style="color: var(--app-blue-medium);"></i> Sua Palavra-chave Secreta
           </h5>
-          <p style="color: var(--dark); margin-bottom: 0.5rem;"><strong>Exemplos:</strong> "socorro guardião", "me ajuda", "código vermelho"</p>
-          <p style="color: var(--gray); font-size: 0.95rem; margin-bottom: 1rem;">
-            <i class="fas fa-lightbulb" style="color: var(--primary);"></i> Escolha uma palavra ou frase que você consegue falar claramente em uma emergência.
+          <p style="color: var(--app-text); margin-bottom: 0.5rem;"><strong>Exemplos:</strong> "socorro guardião", "me ajuda", "código vermelho"</p>
+          <p style="color: var(--app-text-light); font-size: 0.95rem; margin-bottom: 1rem;">
+            <i class="fas fa-lightbulb" style="color: var(--app-blue-medium);"></i> Escolha uma palavra ou frase que você consegue falar claramente em uma emergência.
           </p>
           
           <div style="display: flex; gap: 1rem; flex-wrap: wrap; align-items: center;">
-            <div style="display: inline-flex; align-items: center; gap: 0.5rem; background: #d4edda; color: #155724; padding: 0.5rem 1rem; border-radius: 50px;">
+            <div style="display: inline-flex; align-items: center; gap: 0.5rem; background: var(--app-success-light); color: #155724; padding: 0.5rem 1rem; border-radius: 50px;">
               <i class="fas fa-check-circle"></i>
               <span>Salvo</span>
             </div>
-            <button class="btn" style="background: var(--secondary); color: white; padding: 0.5rem 1.5rem;">
+            <button class="btn" style="background: var(--app-blue-medium); color: white; padding: 0.5rem 1.5rem;">
               <i class="fas fa-play-circle"></i> Testar Reconhecimento
             </button>
           </div>
@@ -1941,7 +1963,7 @@
       </div>
       
       <div class="card">
-        <div class="card-icon" style="background: linear-gradient(135deg, var(--secondary) 0%, var(--secondary-light) 100%); color: white;">
+        <div class="card-icon" style="background: linear-gradient(135deg, var(--app-blue-dark) 0%, var(--app-blue-medium) 100%); color: white;">
           <i class="fas fa-lightbulb"></i>
         </div>
         <h4>Dicas Importantes</h4>
@@ -1953,7 +1975,7 @@
           <li>Pratique algumas vezes para ter certeza do funcionamento</li>
         </ul>
         
-        <div style="background: #fff3cd; border-left: 4px solid #ffc107; padding: 1.2rem; border-radius: 8px; margin-top: 1.5rem;">
+        <div style="background: var(--app-warning-light); border-left: 4px solid var(--app-warning); padding: 1.2rem; border-radius: 8px; margin-top: 1.5rem;">
           <div style="display: flex; gap: 0.8rem; align-items: flex-start;">
             <i class="fas fa-battery-three-quarters" style="color: #856404; font-size: 1.2rem; margin-top: 0.2rem;"></i>
             <div>
@@ -1967,41 +1989,41 @@
           </div>
         </div>
         
-        <div style="margin-top: 1.5rem; padding: 1rem; background: var(--light-gray); border-radius: var(--radius); text-align: center;">
-          <p style="color: var(--dark); margin-bottom: 0.5rem; font-weight: 500;">
-            <i class="fas fa-shield-alt" style="color: var(--primary);"></i> Segurança Dupla
+        <div style="margin-top: 1.5rem; padding: 1rem; background: var(--app-blue-light); border-radius: var(--radius); text-align: center;">
+          <p style="color: var(--app-text); margin-bottom: 0.5rem; font-weight: 500;">
+            <i class="fas fa-shield-alt" style="color: var(--app-blue-medium);"></i> Segurança Dupla
           </p>
-          <p style="color: var(--gray); font-size: 0.9rem; margin: 0;">
+          <p style="color: var(--app-text-light); font-size: 0.9rem; margin: 0;">
             O Comando de Voz só funciona quando o Modo Alerta está ativo, prevenindo ativações acidentais.
           </p>
         </div>
       </div>
     </div>
     
-    <div style="max-width: 800px; margin: 2.5rem auto 0; background: white; padding: 1.5rem; border-radius: var(--radius); box-shadow: var(--shadow);">
+    <div style="max-width: 800px; margin: 2.5rem auto 0; background: var(--app-card-bg); padding: 1.5rem; border-radius: var(--radius); box-shadow: var(--shadow);">
       <div style="display: flex; gap: 1rem; align-items: flex-start;">
-        <div style="width: 50px; height: 50px; background: var(--primary); color: white; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 1.2rem; flex-shrink: 0;">
+        <div style="width: 50px; height: 50px; background: var(--app-blue-medium); color: white; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 1.2rem; flex-shrink: 0;">
           <i class="fas fa-mobile-alt"></i>
         </div>
         <div>
-          <h5 style="color: var(--secondary); margin-bottom: 0.5rem;">Configuração no App</h5>
-          <p style="color: var(--gray); margin-bottom: 0.5rem;">
+          <h5 style="color: var(--app-text); margin-bottom: 0.5rem;">Configuração no App</h5>
+          <p style="color: var(--app-text-light); margin-bottom: 0.5rem;">
             Acesse <strong>Configurações → Comando de Voz</strong> no app Guardian P<span class="p2p-ligadura">2</span>P para definir sua palavra-chave e testar o reconhecimento.
           </p>
           <div style="display: flex; gap: 0.8rem; margin-top: 1rem; flex-wrap: wrap;">
-            <div style="display: inline-flex; align-items: center; gap: 0.5rem; background: var(--light); padding: 0.4rem 0.8rem; border-radius: 50px;">
+            <div style="display: inline-flex; align-items: center; gap: 0.5rem; background: var(--app-blue-light); padding: 0.4rem 0.8rem; border-radius: 50px;">
               <i class="fab fa-android" style="color: #3DDC84;"></i>
               <span style="font-size: 0.9rem;">Guardian P2P</span>
             </div>
-            <div style="display: inline-flex; align-items: center; gap: 0.5rem; background: var(--light); padding: 0.4rem 0.8rem; border-radius: 50px;">
-              <i class="fas fa-users" style="color: var(--secondary);"></i>
+            <div style="display: inline-flex; align-items: center; gap: 0.5rem; background: var(--app-blue-light); padding: 0.4rem 0.8rem; border-radius: 50px;">
+              <i class="fas fa-users" style="color: var(--app-blue-medium);"></i>
               <span style="font-size: 0.9rem;">Contatos Ativos</span>
             </div>
-            <div style="display: inline-flex; align-items: center; gap: 0.5rem; background: var(--light); padding: 0.4rem 0.8rem; border-radius: 50px;">
-              <i class="fas fa-history" style="color: var(--primary);"></i>
+            <div style="display: inline-flex; align-items: center; gap: 0.5rem; background: var(--app-blue-light); padding: 0.4rem 0.8rem; border-radius: 50px;">
+              <i class="fas fa-history" style="color: var(--app-blue-medium);"></i>
               <span style="font-size: 0.9rem;">Histórico de Alertas</span>
             </div>
-            <div style="display: inline-flex; align-items: center; gap: 0.5rem; background: var(--primary); color: white; padding: 0.4rem 0.8rem; border-radius: 50px;">
+            <div style="display: inline-flex; align-items: center; gap: 0.5rem; background: var(--app-blue-medium); color: white; padding: 0.4rem 0.8rem; border-radius: 50px;">
               <i class="fas fa-cog"></i>
               <span style="font-size: 0.9rem;">Configurações</span>
             </div>
@@ -2014,7 +2036,7 @@
   <!-- VÍDEO DE DEMONSTRAÇÃO -->
   <section id="video-demo" class="section video-demo-section">
     <div class="section-header">
-      <h3 class="section-title"><i class="fas fa-play-circle" style="color: var(--primary);"></i> Vídeo de Demonstração</h3>
+      <h3 class="section-title"><i class="fas fa-play-circle" style="color: var(--app-blue-medium);"></i> Vídeo de Demonstração</h3>
       <p class="section-subtitle">Veja o Guardian P<span class="p2p-ligadura">2</span>P em ação</p>
     </div>
     <div class="video-container">
@@ -2044,7 +2066,7 @@
   <!-- SMS HELPER -->
   <section id="sms-helper" class="section sms-helper-section">
     <div class="section-header">
-      <h3 class="section-title"><i class="fas fa-sms" style="color: var(--primary);"></i> Guardian SMS Helper</h3>
+      <h3 class="section-title"><i class="fas fa-sms" style="color: var(--app-blue-medium);"></i> Guardian SMS Helper</h3>
       <p class="section-subtitle">Complemento de segurança para situações sem internet</p>
     </div>
     
@@ -2083,19 +2105,19 @@
 
       <div class="sms-helper-features">
         <div class="sms-feature-card">
-          <h5><i class="fas fa-star" style="color: #FFD700;"></i> Recursos</h5>
+          <h5><i class="fas fa-star" style="color: var(--app-blue-medium);"></i> Recursos</h5>
           <ul>
-            <li>Envia automáticamente SMS de socorro funcionando apenas com sinal de celular. Possui integração completa com Guardian P2P com uma interface intuitiva em português que perimiti a configuração de otimização de bateria.</li>
+            <li>Envia automaticamente SMS de socorro funcionando apenas com sinal de celular. Possui integração completa com Guardian P2P com uma interface intuitiva em português que permite a configuração de otimização de bateria.</li>
           </ul>
         </div>
         <div class="sms-feature-card">
-          <h5><i class="fas fa-shield-alt" style="color: var(--primary);"></i> Privacidade</h5>
+          <h5><i class="fas fa-shield-alt" style="color: var(--app-blue-medium);"></i> Privacidade</h5>
           <ul>
             <li>Não lê suas mensagens, não coleta dados pessoais, não acessa histórico de SMS e só envia SMS quando você aciona o alerta.</li>
           </ul>
         </div>
         <div class="sms-feature-card">
-          <h5><i class="fas fa-cog" style="color: #6c757d;"></i> Requisitos</h5>
+          <h5><i class="fas fa-cog" style="color: var(--app-blue-medium);"></i> Requisitos</h5>
           <ul>
             <li><i class="fab fa-android"></i> Android 8.0 ou superior</li>
             <li><i class="fas fa-mobile-alt"></i> Guardian P2P instalado</li>
@@ -2133,7 +2155,7 @@
         </div>
         <h4>Conformidade LGPD</h4>
         <p>Controle total: acesse, corrija, exclua ou exporte seus dados conforme a Lei Geral de Proteção de Dados.</p>
-        <a href="https://caerod1980.github.io/Guardian-P2P/" target="_blank">Política Completa</a>
+        <a href="https://caerod1980.github.io/Guardian-P2P/" target="_blank" style="background: var(--app-blue-medium);">Política Completa</a>
       </div>
       <div class="card">
         <div class="card-icon">
@@ -2152,52 +2174,52 @@
   <!-- DEPOIMENTOS (NOVA SEÇÃO) -->
   <section id="depoimentos" class="section depoimentos-section">
     <div class="section-header">
-      <h3 class="section-title"><i class="fas fa-comments" style="color: var(--primary);"></i> Depoimentos</h3>
+      <h3 class="section-title"><i class="fas fa-comments" style="color: var(--app-blue-medium);"></i> Depoimentos</h3>
       <p class="section-subtitle">Veja o que nossos usuários dizem sobre o Guardian P<span class="p2p-ligadura">2</span>P</p>
     </div>
     
     <div class="cards">
       <div class="card">
-        <div class="card-icon" style="background: linear-gradient(135deg, var(--primary) 0%, var(--primary-dark) 100%); color: white;">
+        <div class="card-icon" style="background: linear-gradient(135deg, var(--app-blue-medium) 0%, var(--app-blue-dark) 100%); color: white;">
           <i class="fas fa-user"></i>
         </div>
         <h4>Silvia Caetano</h4>
-        <p style="font-style: italic; color: var(--dark);">"Acompanhei o nascimento e o desenvolvimento deste aplicativo, e vi o esforço e a dedicação em cada detalhe. O aplicativo é rápido para instalar e muito prático na utilização. 
+        <p style="font-style: italic; color: var(--app-text);">"Acompanhei o nascimento e o desenvolvimento deste aplicativo, e vi o esforço e a dedicação em cada detalhe. O aplicativo é rápido para instalar e muito prático na utilização. 
 Acredito que ajudará muitas pessoas em situações de risco."</p>
-        <div style="color: var(--primary); margin-top: 1rem;">
+        <div style="color: var(--app-blue-medium); margin-top: 1rem;">
         </div>
       </div>
       
       <div class="card">
-        <div class="card-icon" style="background: linear-gradient(135deg, var(--secondary) 0%, var(--secondary-light) 100%); color: white;">
+        <div class="card-icon" style="background: linear-gradient(135deg, var(--app-blue-dark) 0%, var(--app-blue-medium) 100%); color: white;">
           <i class="fas fa-user-friends"></i>
         </div>
         <h4>Danielle</h4>
-        <p style="font-style: italic; color: var(--dark);">"Durante o período de construção do Guardian, vi o quanto ele foi pensado com cuidado e propósito. Acredito que será uma ferramenta importante para ajudar as pessoas, principalmente nós mulheres, trazendo mais segurança. Um app simples, prático, basta apertar o botão de SOS que já acionamos o pedido de ajuda."</p>
-        <div style="color: var(--primary); margin-top: 1rem;">
+        <p style="font-style: italic; color: var(--app-text);">"Durante o período de construção do Guardian, vi o quanto ele foi pensado com cuidado e propósito. Acredito que será uma ferramenta importante para ajudar as pessoas, principalmente nós mulheres, trazendo mais segurança. Um app simples, prático, basta apertar o botão de SOS que já acionamos o pedido de ajuda."</p>
+        <div style="color: var(--app-blue-medium); margin-top: 1rem;">
         </div>
       </div>
       
       <div class="card">
-        <div class="card-icon" style="background: linear-gradient(135deg, #457B9D 0%, #1D3557 100%); color: white;">
+        <div class="card-icon" style="background: linear-gradient(135deg, var(--app-blue-medium) 0%, var(--app-blue-dark) 100%); color: white;">
           <i class="fas fa-shield-alt"></i>
         </div>
         <h4>Priscila Lelis</h4>
-        <p style="font-style: italic; color: var(--dark);">"Agradeço por ter desenvolvido esse app."</p>
-        <div style="color: var(--primary); margin-top: 1rem;">
+        <p style="font-style: italic; color: var(--app-text);">"Agradeço por ter desenvolvido esse app."</p>
+        <div style="color: var(--app-blue-medium); margin-top: 1rem;">
         </div>
       </div>
     </div>
     
-    <div style="text-align: center; margin-top: 4rem; padding: 2rem; background: linear-gradient(135deg, var(--light) 0%, var(--light-gray) 100%); border-radius: var(--radius);">
-      <h4 style="color: var(--secondary); margin-bottom: 1rem;">Compartilhe sua experiência</h4>
-      <p style="color: var(--gray); margin-bottom: 1.5rem; max-width: 600px; margin-left: auto; margin-right: auto;">
+    <div style="text-align: center; margin-top: 4rem; padding: 2rem; background: var(--app-blue-light); border-radius: var(--radius);">
+      <h4 style="color: var(--app-text); margin-bottom: 1rem;">Compartilhe sua experiência</h4>
+      <p style="color: var(--app-text-light); margin-bottom: 1.5rem; max-width: 600px; margin-left: auto; margin-right: auto;">
         Sua opinião é muito importante para nós e pode ajudar outras pessoas a conhecerem o Guardian P2P.
       </p>
       <a href="#contato" class="btn btn-primary">
         <i class="fas fa-paper-plane"></i> Enviar seu depoimento
       </a>
-      <p style="color: var(--gray); font-size: 0.9rem; margin-top: 1rem;">
+      <p style="color: var(--app-text-light); font-size: 0.9rem; margin-top: 1rem;">
         Os melhores depoimentos serão publicados aqui!
       </p>
     </div>
@@ -2316,7 +2338,7 @@ Acredito que ajudará muitas pessoas em situações de risco."</p>
         <div class="form-group">
           <label for="message">Seu Depoimento ou Mensagem *</label>
           <textarea id="message" name="message" class="form-control" placeholder="Compartilhe sua experiência, tire dúvidas ou deixe sugestões..." required rows="5"></textarea>
-          <small style="display: block; text-align: right; color: var(--gray); margin-top: 0.5rem;">Máximo 1000 caracteres</small>
+          <small style="display: block; text-align: right; color: var(--app-text-light); margin-top: 0.5rem;">Máximo 1000 caracteres</small>
         </div>
         
         <div class="form-group" style="margin-top: 1.5rem;">
@@ -2324,7 +2346,7 @@ Acredito que ajudará muitas pessoas em situações de risco."</p>
             <input type="checkbox" id="permissao" name="permissao" style="width: auto;">
             <span>Autorizo a publicação do meu depoimento (opcional)</span>
           </label>
-          <small style="color: var(--gray);">Se marcado, seu depoimento poderá ser publicado na seção de depoimentos do site.</small>
+          <small style="color: var(--app-text-light);">Se marcado, seu depoimento poderá ser publicado na seção de depoimentos do site.</small>
         </div>
         
         <button type="submit" class="btn btn-primary" style="width: 100%; margin-top: 1rem;" id="submit-btn">
@@ -2332,13 +2354,13 @@ Acredito que ajudará muitas pessoas em situações de risco."</p>
         </button>
       </form>
       
-      <div style="text-align: center; margin-top: 2rem; padding-top: 2rem; border-top: 1px solid var(--light-gray);">
-        <p style="color: var(--gray); font-size: 0.9rem; margin-bottom: 1rem;">
+      <div style="text-align: center; margin-top: 2rem; padding-top: 2rem; border-top: 1px solid var(--app-blue-light);">
+        <p style="color: var(--app-text-light); font-size: 0.9rem; margin-bottom: 1rem;">
           Problemas com o formulário? Use:
         </p>
         <div style="display: flex; gap: 1rem; justify-content: center; flex-wrap: wrap;">
           <a href="mailto:caerod@gmail.com?subject=Depoimento Guardian P2P" 
-             class="btn" style="background: var(--secondary); color: white; min-width: 180px;">
+             class="btn" style="background: var(--app-blue-medium); color: white; min-width: 180px;">
             <i class="fas fa-envelope"></i> E-mail Direto
           </a>
           <a href="https://wa.me/5514996593929" 
