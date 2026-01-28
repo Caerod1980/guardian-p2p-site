@@ -135,15 +135,15 @@
     }
 
     .logo-img {
-      width: 45px;
-      height: 45px;
-      border-radius: 10px;
+      width: 60px;
+      height: 60px;
+      border-radius: 12px;
       object-fit: contain;
     }
 
     .logo-text {
       font-weight: 700;
-      font-size: 1.5rem;
+      font-size: 1.8rem;
       color: var(--secondary);
     }
 
@@ -229,19 +229,40 @@
       border-width: 2px;
     }
 
-    nav {
+    /* ====== NOVO MENU DESKTOP ====== */
+    .desktop-nav {
+      display: none;
+    }
+
+    .desktop-nav-container {
       display: flex;
+      align-items: center;
       gap: 2rem;
+      flex-wrap: nowrap;
     }
 
-    nav a {
-      font-weight: 500;
-      color: var(--dark);
+    .main-menu {
+      display: flex;
+      gap: 1.5rem;
+      list-style: none;
+      margin: 0;
+      padding: 0;
+    }
+
+    .main-menu > li {
       position: relative;
-      padding: 0.5rem 0;
     }
 
-    nav a::after {
+    .main-menu > li > a {
+      font-weight: 600;
+      color: var(--dark);
+      padding: 0.5rem 0;
+      position: relative;
+      font-size: 1rem;
+      white-space: nowrap;
+    }
+
+    .main-menu > li > a::after {
       content: '';
       position: absolute;
       bottom: 0;
@@ -252,16 +273,69 @@
       transition: var(--transition);
     }
 
-    nav a:hover {
+    .main-menu > li > a:hover {
       color: var(--primary);
     }
 
-    nav a:hover::after {
+    .main-menu > li > a:hover::after {
       width: 100%;
     }
 
+    /* Submenu */
+    .submenu {
+      position: absolute;
+      top: 100%;
+      left: 0;
+      background: var(--white);
+      min-width: 200px;
+      border-radius: var(--radius);
+      box-shadow: var(--shadow-lg);
+      opacity: 0;
+      visibility: hidden;
+      transform: translateY(10px);
+      transition: var(--transition);
+      z-index: 100;
+      padding: 0.5rem 0;
+    }
+
+    .main-menu > li:hover .submenu {
+      opacity: 1;
+      visibility: visible;
+      transform: translateY(0);
+    }
+
+    .submenu li {
+      list-style: none;
+    }
+
+    .submenu a {
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+      padding: 0.8rem 1.2rem;
+      color: var(--app-text);
+      transition: var(--transition);
+      white-space: nowrap;
+      margin: 0; /* Remove margem de parágrafo dos submenus */
+    }
+
+    .submenu a:hover {
+      background: var(--app-blue-light);
+      color: var(--app-blue-dark);
+    }
+
+    .submenu a i {
+      width: 16px;
+      text-align: center;
+    }
+
+    /* Menu Mobile (mantido como estava) */
+    .mobile-nav {
+      display: block;
+    }
+
     .mobile-menu-btn {
-      display: none;
+      display: block;
       background: none;
       border: none;
       font-size: 1.5rem;
@@ -269,6 +343,187 @@
       cursor: pointer;
     }
 
+    #mainNav {
+      display: none;
+      width: 100%;
+      flex-direction: column;
+      gap: 0;
+      margin-top: 1rem;
+    }
+
+    #mainNav.active {
+      display: flex;
+    }
+
+    #mainNav a {
+      padding: 0.8rem 0;
+      border-bottom: 1px solid rgba(0, 0, 0, 0.05);
+      font-weight: 500;
+      color: var(--dark);
+    }
+
+    #mainNav a:last-child {
+      display: block;
+      text-align: center;
+      margin-top: 1rem;
+      background: var(--primary);
+      color: white;
+      padding: 0.8rem;
+      border-radius: 50px;
+    }
+
+    #mainNav a:last-child:hover {
+      background: var(--primary-dark);
+    }
+
+    .header-cta {
+      display: none;
+    }
+
+    /* ====== MEDIA QUERIES ====== */
+    /* DESKTOP - NOVO LAYOUT */
+    @media (min-width: 1024px) {
+      .header-container {
+        display: grid;
+        grid-template-columns: auto 1fr auto;
+        align-items: center;
+        gap: 2.5rem; /* Reduzido para dar mais espaço */
+      }
+
+      .logo {
+        justify-self: start;
+      }
+
+      /* DIMINUÍMOS A FONTE DO LOGO NO DESKTOP */
+      .logo-img {
+        width: 60px; /* Reduzido de 70px */
+        height: 60px; /* Reduzido de 70px */
+      }
+
+      .logo-text {
+        font-size: 1.7rem; /* REDUZIDO de 2rem para evitar quebra */
+        white-space: nowrap; /* Garante que fique em uma linha */
+      }
+
+      /* Esconde menu mobile */
+      .mobile-nav {
+        display: none;
+      }
+
+      /* Mostra menu desktop */
+      .desktop-nav {
+        display: block;
+        justify-self: center;
+      }
+
+      .desktop-nav-container {
+        gap: 1rem;
+      }
+
+      .main-menu {
+        gap: 1.2rem;
+      }
+
+      /* Botão "Baixar App" */
+      .header-cta {
+        display: block;
+        justify-self: end;
+      }
+
+      .header-cta .btn-primary {
+        padding: 0.8rem 1.8rem;
+        font-size: 1rem;
+        white-space: nowrap;
+      }
+
+      /* Esconde o botão "Baixar App" do menu mobile no desktop */
+      #mainNav a:last-child {
+        display: none;
+      }
+    }
+
+    /* Ajustes para telas muito grandes */
+    @media (min-width: 1400px) {
+      .header-container {
+        gap: 3rem; /* Reduzido de 4rem */
+      }
+
+      .main-menu {
+        gap: 2rem;
+      }
+
+      .logo-img {
+        width: 65px; /* Reduzido de 75px */
+        height: 65px; /* Reduzido de 75px */
+      }
+
+      .logo-text {
+        font-size: 1.8rem; /* Reduzido de 2.1rem */
+      }
+    }
+
+    /* Ajustes para telas médias (tablet) */
+    @media (min-width: 769px) and (max-width: 1023px) {
+      .header-container {
+        gap: 2rem;
+      }
+
+      .logo-img {
+        width: 55px;
+        height: 55px;
+      }
+
+      .logo-text {
+        font-size: 1.6rem;
+      }
+
+      /* Neste breakpoint ainda usa menu mobile */
+      .desktop-nav {
+        display: none;
+      }
+
+      .mobile-nav {
+        display: block;
+      }
+    }
+
+    /* Mobile - mantém layout original */
+    @media (max-width: 768px) {
+      .header-cta {
+        display: none;
+      }
+      
+      .header-container {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        flex-wrap: wrap;
+      }
+      
+      .logo-img {
+        width: 50px;
+        height: 50px;
+      }
+
+      .logo-text {
+        font-size: 1.6rem;
+      }
+      
+      /* Mostra o botão no menu mobile */
+      #mainNav a:last-child {
+        display: block;
+      }
+      
+      .mobile-menu-btn {
+        display: block;
+      }
+
+      .desktop-nav {
+        display: none;
+      }
+    }
+
+    /* Resto do CSS permanece igual... */
     .hero {
       background: linear-gradient(135deg, var(--app-blue-dark) 0%, var(--app-blue-medium) 100%);
       color: var(--white);
@@ -1125,6 +1380,131 @@
       font-weight: 700;
     }
 
+    /* MODAL PARA APPLE STORE */
+    .modal-overlay {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: rgba(0, 0, 0, 0.7);
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      z-index: 2000;
+      opacity: 0;
+      visibility: hidden;
+      transition: var(--transition);
+    }
+
+    .modal-overlay.active {
+      opacity: 1;
+      visibility: visible;
+    }
+
+    .modal {
+      background: var(--white);
+      border-radius: var(--radius);
+      padding: 3rem;
+      max-width: 500px;
+      width: 90%;
+      box-shadow: var(--shadow-lg);
+      transform: translateY(20px);
+      transition: transform 0.3s ease;
+    }
+
+    .modal-overlay.active .modal {
+      transform: translateY(0);
+    }
+
+    .modal-header {
+      text-align: center;
+      margin-bottom: 1.5rem;
+    }
+
+    .modal-icon {
+      width: 80px;
+      height: 80px;
+      background: linear-gradient(135deg, #A8DADC 0%, #457B9D 100%);
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin: 0 auto 1.5rem;
+      color: var(--white);
+      font-size: 2.5rem;
+    }
+
+    .modal-header h3 {
+      color: var(--app-text);
+      margin-bottom: 0.5rem;
+    }
+
+    .modal-content {
+      text-align: center;
+      margin-bottom: 2rem;
+    }
+
+    .modal-content p {
+      color: var(--app-text-light);
+      margin-bottom: 1.5rem;
+      line-height: 1.6;
+    }
+
+    .modal-actions {
+      display: flex;
+      flex-direction: column;
+      gap: 1rem;
+      margin-top: 2rem;
+    }
+
+    .modal-btn {
+      padding: 1rem 2rem;
+      border-radius: 50px;
+      font-weight: 600;
+      text-align: center;
+      transition: var(--transition);
+      cursor: pointer;
+      border: none;
+      font-size: 1rem;
+    }
+
+    .modal-btn-primary {
+      background: var(--primary);
+      color: var(--white);
+    }
+
+    .modal-btn-primary:hover {
+      background: var(--primary-dark);
+      transform: translateY(-2px);
+    }
+
+    .modal-btn-secondary {
+      background: var(--app-blue-light);
+      color: var(--app-blue-dark);
+    }
+
+    .modal-btn-secondary:hover {
+      background: var(--app-blue-medium);
+      color: var(--white);
+    }
+
+    .modal-close {
+      position: absolute;
+      top: 1rem;
+      right: 1rem;
+      background: none;
+      border: none;
+      font-size: 1.5rem;
+      color: var(--gray);
+      cursor: pointer;
+      transition: var(--transition);
+    }
+
+    .modal-close:hover {
+      color: var(--primary);
+    }
+
     .contact-form {
       max-width: 700px;
       margin: 0 auto;
@@ -1437,133 +1817,6 @@
       transform: translateY(-3px);
     }
 
-    /* ====== HEADER COM LOGO À ESQUERDA E BOTÃO À DIREITA ====== */
-    @media (min-width: 769px) {
-      .header-container {
-        display: grid;
-        grid-template-columns: auto 1fr auto;
-        align-items: center;
-        gap: 2rem;
-      }
-      
-      .logo {
-        justify-self: start;
-      }
-      
-      .logo-text {
-        font-size: 1.2rem;
-      }
-      
-      nav {
-        justify-self: center;
-        display: flex;
-        gap: 1.5rem;
-        margin: 0;
-      }
-      
-      nav a:last-child {
-        display: none;
-      }
-      
-      /* Botão "Baixar App" separado no canto direito */
-      .header-cta {
-        justify-self: end;
-      }
-      
-      .header-cta .btn-primary {
-        padding: 0.7rem 1.5rem;
-        font-size: 0.95rem;
-        white-space: nowrap;
-      }
-    }
-
-    /* Ajuste para telas médias */
-    @media (min-width: 769px) and (max-width: 1100px) {
-      .header-container {
-        gap: 1rem;
-      }
-      
-      nav {
-        gap: 1rem;
-      }
-      
-      nav a {
-        font-size: 0.9rem;
-      }
-      
-      .header-cta .btn-primary {
-        padding: 0.6rem 1.2rem;
-        font-size: 0.85rem;
-      }
-    }
-
-    /* Para telas grandes */
-    @media (min-width: 1200px) {
-      .header-container {
-        gap: 2.5rem;
-      }
-      
-      nav {
-        gap: 2rem;
-      }
-      
-      .header-cta .btn-primary {
-        padding: 0.8rem 1.8rem;
-        font-size: 1rem;
-      }
-    }
-
-    /* Mobile - mantém layout original */
-    @media (max-width: 768px) {
-      .header-cta {
-        display: none;
-      }
-      
-      .header-container {
-        display: flex;
-        justify-content: space-between;
-        align-items: center;
-        flex-wrap: wrap;
-      }
-      
-      /* Mostra o botão no menu mobile */
-      nav a:last-child {
-        display: block;
-        text-align: center;
-        margin-top: 1rem;
-        background: var(--primary);
-        color: white;
-        padding: 0.8rem;
-        border-radius: 50px;
-        border-bottom: none !important;
-      }
-      
-      nav a:last-child:hover {
-        background: var(--primary-dark);
-      }
-      
-      nav {
-        display: none;
-        width: 100%;
-        flex-direction: column;
-        gap: 0;
-        margin-top: 1rem;
-      }
-      
-      nav.active {
-        display: flex;
-      }
-      
-      nav a {
-        padding: 0.8rem 0;
-        border-bottom: 1px solid rgba(0, 0, 0, 0.05);
-      }
-      
-      .mobile-menu-btn {
-        display: block;
-      }
-    }
-
     @media (max-width: 992px) {
       .hero h2 {
         font-size: 2.2rem;
@@ -1584,6 +1837,10 @@
       
       .stat-number {
         font-size: 2rem;
+      }
+      
+      .modal {
+        padding: 2rem;
       }
     }
 
@@ -1665,6 +1922,19 @@
       #faq .section-subtitle {
         font-size: 0.85rem;
       }
+      
+      .modal {
+        padding: 1.5rem;
+        width: 95%;
+      }
+      
+      .modal-actions {
+        flex-direction: column;
+      }
+      
+      .modal-btn {
+        width: 100%;
+      }
     }
 
     @media (max-width: 576px) {
@@ -1705,7 +1975,7 @@
   </style>
 </head>
 <body>
-  <!-- HEADER COM LOGO À ESQUERDA E BOTÃO À DIREITA -->
+  <!-- HEADER COM NOVO MENU DESKTOP -->
   <header>
     <div class="header-container">
       <a href="#home" class="logo">
@@ -1713,28 +1983,94 @@
         <div class="logo-text">Guardian <span>P<span class="p2p-ligadura">2</span>P</span></div>
       </a>
       
-      <button class="mobile-menu-btn" id="mobileMenuBtn">
-        <i class="fas fa-bars"></i>
-      </button>
+      <!-- MENU DESKTOP (aparece apenas em telas grandes) -->
+      <div class="desktop-nav">
+        <div class="desktop-nav-container">
+          <ul class="main-menu">
+            <li><a href="#sobre">SOBRE</a></li>
+            <li><a href="#historia">NOSSA HISTÓRIA</a></li>
+            <li>
+              <a href="#funcionalidades">FUNCIONALIDADES</a>
+              <ul class="submenu">
+                <li><a href="#comando-voz"><i class="fas fa-microphone-alt"></i> Comando de voz</a></li>
+                <li><a href="#video-demo"><i class="fas fa-play-circle"></i> Video Demo</a></li>
+                <li><a href="#sms-helper"><i class="fas fa-sms"></i> SMS Helper</a></li>
+                <li><a href="#depoimentos"><i class="fas fa-comments"></i> Depoimentos</a></li>
+              </ul>
+            </li>
+            <li><a href="#privacidade">PRIVACIDADE</a></li>
+            <li><a href="#faq">FAQ</a></li>
+          </ul>
+        </div>
+      </div>
       
-      <nav id="mainNav">
-        <a href="#sobre">Sobre</a>
-        <a href="#historia">Nossa História</a>
-        <a href="#funcionalidades">Funcionalidades</a>
-        <a href="#comando-voz"><i class="fas fa-microphone-alt"></i> Comando de Voz</a>
-        <a href="#video-demo"><i class="fas fa-play-circle"></i> Vídeo Demo</a>
-        <a href="#sms-helper"><i class="fas fa-sms"></i> SMS Helper</a>
-        <a href="#privacidade">Privacidade</a>
-        <a href="#depoimentos"><i class="fas fa-comments"></i> Depoimentos</a>
-        <a href="#faq">FAQ</a>
-        <a href="#contato">Contato</a>
-      </nav>
+      <!-- MENU MOBILE (aparece apenas em telas pequenas) -->
+      <div class="mobile-nav">
+        <button class="mobile-menu-btn" id="mobileMenuBtn">
+          <i class="fas fa-bars"></i>
+        </button>
+        
+        <nav id="mainNav">
+          <a href="#sobre">Sobre</a>
+          <a href="#historia">Nossa História</a>
+          <a href="#funcionalidades">Funcionalidades</a>
+          <a href="#comando-voz"><i class="fas fa-microphone-alt"></i> Comando de Voz</a>
+          <a href="#video-demo"><i class="fas fa-play-circle"></i> Vídeo Demo</a>
+          <a href="#sms-helper"><i class="fas fa-sms"></i> SMS Helper</a>
+          <a href="#privacidade">Privacidade</a>
+          <a href="#depoimentos"><i class="fas fa-comments"></i> Depoimentos</a>
+          <a href="#faq">FAQ</a>
+          <a href="#contato">Contato</a>
+          <a href="#download">Baixar App</a>
+        </nav>
+      </div>
       
       <div class="header-cta">
         <a href="#download" class="btn btn-primary">Baixar App</a>
       </div>
     </div>
   </header>
+
+  <!-- MODAL PARA APPLE STORE -->
+  <div class="modal-overlay" id="appleStoreModal">
+    <div class="modal">
+      <button class="modal-close" id="closeModal">
+        <i class="fas fa-times"></i>
+      </button>
+      
+      <div class="modal-header">
+        <div class="modal-icon">
+          <i class="fab fa-apple"></i>
+        </div>
+        <h3>Disponível em breve!</h3>
+        <p class="section-subtitle">Demonstre o seu interesse</p>
+      </div>
+      
+      <div class="modal-content">
+        <p>O Guardian P<span class="p2p-ligadura">2</span>P para iOS (iPhone) está em desenvolvimento e será lançado em breve na App Store.</p>
+        
+        <p>Envie uma mensagem pelo site e solicite ser notificado quando o aplicativo estiver disponível para iPhone!</p>
+        
+        <div style="background: var(--app-blue-light); padding: 1.5rem; border-radius: var(--radius); margin-top: 1.5rem;">
+          <p style="color: var(--app-text); margin-bottom: 0.5rem; font-weight: 500;">
+            <i class="fas fa-lightbulb" style="color: var(--app-blue-medium);"></i> Por que ainda não está disponível?
+          </p>
+          <p style="color: var(--app-text-light); font-size: 0.9rem; margin: 0;">
+            O desenvolvimento para iOS requer processos específicos da Apple. Estamos trabalhando para trazer a mesma experiência de segurança para todos os usuários.
+          </p>
+        </div>
+      </div>
+      
+      <div class="modal-actions">
+        <a href="#contato" class="modal-btn modal-btn-primary" id="contactLink">
+          <i class="fas fa-paper-plane"></i> Enviar mensagem no site
+        </a>
+        <button class="modal-btn modal-btn-secondary" id="closeModalBtn">
+          <i class="fas fa-times"></i> Fechar
+        </button>
+      </div>
+    </div>
+  </div>
 
   <!-- HERO SECTION COM NOVOS MOCKUPS -->
   <section class="hero" id="home">
@@ -2386,7 +2722,7 @@ Acredito que ajudará muitas pessoas em situações de risco."</p>
             <span>Google Play</span>
           </div>
         </a>
-        <a href="https://apps.apple.com/app/guardian-p2p/id123456789" target="_blank" class="store-btn">
+        <a href="javascript:void(0)" class="store-btn" id="appleStoreBtn">
           <i class="fab fa-apple store-icon"></i>
           <div class="store-text">
             <span>Baixe na</span>
@@ -2506,6 +2842,49 @@ Acredito que ajudará muitas pessoas em situações de risco."</p>
           });
         }
       });
+    });
+
+    // Apple Store Modal
+    const appleStoreBtn = document.getElementById('appleStoreBtn');
+    const appleStoreModal = document.getElementById('appleStoreModal');
+    const closeModal = document.getElementById('closeModal');
+    const closeModalBtn = document.getElementById('closeModalBtn');
+    const contactLink = document.getElementById('contactLink');
+
+    function openAppleStoreModal() {
+      appleStoreModal.classList.add('active');
+      document.body.style.overflow = 'hidden';
+    }
+
+    function closeAppleStoreModal() {
+      appleStoreModal.classList.remove('active');
+      document.body.style.overflow = 'auto';
+    }
+
+    appleStoreBtn.addEventListener('click', (e) => {
+      e.preventDefault();
+      openAppleStoreModal();
+    });
+
+    closeModal.addEventListener('click', closeAppleStoreModal);
+    closeModalBtn.addEventListener('click', closeAppleStoreModal);
+
+    contactLink.addEventListener('click', () => {
+      closeAppleStoreModal();
+      // Scroll para seção de contato
+      setTimeout(() => {
+        document.querySelector('#contato').scrollIntoView({
+          behavior: 'smooth',
+          block: 'start'
+        });
+      }, 300);
+    });
+
+    // Fechar modal ao clicar fora
+    appleStoreModal.addEventListener('click', (e) => {
+      if (e.target === appleStoreModal) {
+        closeAppleStoreModal();
+      }
     });
 
     // EmailJS Configuration
@@ -2714,4 +3093,5 @@ Acredito que ajudará muitas pessoas em situações de risco."</p>
   </script>
 </body>
 </html>
+
 
